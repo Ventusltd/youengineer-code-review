@@ -1,0 +1,415 @@
+:root {
+  --ink: #24190f;
+  --marble: #fff8e7;
+  --stone: #e9d8b7;
+  --bronze: #9e6b2e;
+  --olive: #5f6f3a;
+  --snake: #273f2c;
+  --shade: rgba(36, 25, 15, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(255, 248, 231, 0.96), rgba(171, 137, 86, 0.78)),
+    linear-gradient(135deg, #1b231a, #40301f);
+  padding: 28px;
+}
+
+.temple-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(255, 248, 231, 0.94);
+  border: 8px double var(--bronze);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px var(--shade);
+}
+
+.hero {
+  text-align: center;
+  padding: 34px 24px 24px;
+  border-bottom: 3px solid rgba(158, 107, 46, 0.35);
+  background:
+    linear-gradient(90deg, transparent, rgba(158, 107, 46, 0.12), transparent),
+    var(--marble);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--olive);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.subtitle {
+  max-width: 720px;
+  margin: 16px auto 0;
+  font-size: 1.08rem;
+}
+
+.frieze {
+  margin: 18px 0 0;
+  color: var(--bronze);
+  font-weight: bold;
+  letter-spacing: 0.18em;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  padding: 28px;
+}
+
+.panel {
+  background: var(--marble);
+  border: 3px solid rgba(158, 107, 46, 0.35);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 14px 35px rgba(36, 25, 15, 0.14);
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+}
+
+.medusa-panel {
+  text-align: center;
+}
+
+.medusa-art {
+  position: relative;
+  width: 180px;
+  height: 150px;
+  margin: 0 auto 18px;
+}
+
+.face {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 106px;
+  height: 108px;
+  transform: translate(-50%, -50%);
+  border: 4px solid var(--bronze);
+  border-radius: 52% 52% 46% 46%;
+  background: linear-gradient(#f9e8bd, #d8b36c);
+  box-shadow: inset 0 -12px 0 rgba(158, 107, 46, 0.12);
+}
+
+.snake {
+  position: absolute;
+  color: var(--snake);
+  font-size: 5.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.snake-one {
+  left: 0;
+  top: 4px;
+  transform: rotate(-30deg);
+}
+
+.snake-two {
+  right: 0;
+  top: 4px;
+  transform: rotate(30deg);
+}
+
+.snake-three {
+  left: 38px;
+  top: -16px;
+  transform: rotate(8deg);
+}
+
+.snake-four {
+  right: 38px;
+  top: -16px;
+  transform: rotate(-8deg);
+}
+
+.eye {
+  position: absolute;
+  top: 42px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 5px rgba(95, 111, 58, 0.18);
+}
+
+.left-eye {
+  left: 28px;
+}
+
+.right-eye {
+  right: 28px;
+}
+
+.nose {
+  position: absolute;
+  left: 50%;
+  top: 56px;
+  width: 12px;
+  height: 24px;
+  border-left: 3px solid rgba(36, 25, 15, 0.5);
+  border-bottom: 3px solid rgba(36, 25, 15, 0.5);
+  transform: translateX(-50%) rotate(-8deg);
+}
+
+.mouth {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  width: 42px;
+  height: 14px;
+  border-bottom: 4px solid rgba(36, 25, 15, 0.65);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.myth-note {
+  min-height: 48px;
+  margin: 0 auto 18px;
+  max-width: 360px;
+  color: var(--olive);
+  font-style: italic;
+}
+
+.clock {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 18px;
+  border: 10px double var(--bronze);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #fffdf3 0 58%, #e9d8b7 59% 100%);
+}
+
+.clock-ring {
+  position: absolute;
+  inset: 18px;
+  border: 2px solid rgba(158, 107, 46, 0.35);
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  border-radius: 999px;
+}
+
+.hour-hand {
+  width: 8px;
+  height: 70px;
+  margin-left: -4px;
+  background: var(--ink);
+}
+
+.minute-hand {
+  width: 5px;
+  height: 92px;
+  margin-left: -2.5px;
+  background: var(--olive);
+}
+
+.second-hand {
+  width: 2px;
+  height: 102px;
+  margin-left: -1px;
+  background: var(--bronze);
+}
+
+.clock-centre {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bronze);
+  transform: translate(-50%, -50%);
+}
+
+.clock-number {
+  position: absolute;
+  font-weight: bold;
+  color: var(--bronze);
+}
+
+.twelve {
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.three {
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.six {
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nine {
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.digital-time {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.digital-date {
+  margin: 8px 0 0;
+  color: var(--olive);
+  font-weight: bold;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 46px 1fr 46px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  border: 2px solid var(--bronze);
+  border-radius: 12px;
+  background: #f7e4b9;
+  color: var(--ink);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+button:hover,
+button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 14px rgba(36, 25, 15, 0.18);
+}
+
+.calendar-header button {
+  height: 46px;
+  font-size: 1.3rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.weekday-row {
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--olive);
+  font-weight: bold;
+}
+
+.day {
+  min-height: 70px;
+  padding: 8px;
+  border: 2px solid rgba(158, 107, 46, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.45);
+  font-weight: bold;
+}
+
+.day.empty {
+  background: transparent;
+  border-color: transparent;
+}
+
+.day.today {
+  border-color: var(--bronze);
+  background: rgba(158, 107, 46, 0.18);
+  box-shadow: inset 0 0 0 3px rgba(158, 107, 46, 0.15);
+}
+
+.today-button {
+  width: 100%;
+  margin: 18px 0;
+  padding: 12px 16px;
+}
+
+.quest-box {
+  border-top: 2px solid rgba(158, 107, 46, 0.25);
+  padding-top: 16px;
+}
+
+.quest-box h3 {
+  margin: 0 0 10px;
+}
+
+.quest-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.quest-box li {
+  margin: 8px 0;
+}
+
+code {
+  background: rgba(95, 111, 58, 0.12);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+@media (max-width: 840px) {
+  body {
+    padding: 14px;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .clock {
+    width: 230px;
+    height: 230px;
+  }
+
+  .day {
+    min-height: 54px;
+    padding: 6px;
+  }
+}
