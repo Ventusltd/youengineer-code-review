@@ -27,6 +27,17 @@
     min-height: 38px;
 }
 
+body.fs-active .map-mode-controls {
+    top: auto;
+    bottom: 74px;
+    right: 12px;
+}
+
+body.fs-active .custom-map-attrib {
+    right: 12px;
+    max-width: calc(100% - 24px);
+}
+
 .popup-search-btns {
     display: flex;
     gap: 7px;
