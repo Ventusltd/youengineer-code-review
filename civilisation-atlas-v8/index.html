@@ -22,9 +22,10 @@
     <div class="map-container" id="map-container">
         <div id="map"></div>
         <div class="custom-map-attrib">Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | © CARTO | Satellite © Esri | Local civilisation GeoJSON only</div>
+        <div class="map-mode-controls"><button id="btn-satellite" class="map-toggle-btn">SATELLITE VIEW</button></div>
         <button id="btn-fullscreen" onclick="enterFullscreen()" title="Fullscreen">⛶</button>
         <div class="search-bar-wrapper"><div style="position:relative"><input class="search-input" id="search-input" type="text" placeholder="Search site name..." autocomplete="off" /><div class="search-results" id="search-results"></div></div><button class="search-btn" id="search-btn">GO</button></div>
-        <div class="map-controls"><button class="map-ctrl-btn" id="btn-satellite">◩ Satellite</button><button class="map-ctrl-btn" id="btn-export">⬇ Export CSV</button><button class="map-ctrl-btn" id="btn-clear">✕ Clear Layers</button><button class="map-ctrl-btn" id="btn-reset">◎ Reset View</button></div>
+        <div class="map-controls"><button class="map-ctrl-btn" id="btn-export">⬇ Export CSV</button><button class="map-ctrl-btn" id="btn-clear">✕ Clear Layers</button><button class="map-ctrl-btn" id="btn-reset">◎ Reset View</button></div>
         <div class="podcast-shoutout">Civilisation Atlas V8<br>Static GeoJSON learning layers</div>
     </div>
     <div class="scada-wrapper">
@@ -36,6 +37,7 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 <script src="ventus-corev8engine.js"></script>
+<script src="atlas-v8-polish.js"></script>
 <script>
 const classicsConfig=[{group:"Classical Civilisations (GeoJSON)",layers:[{id:"greek",label:"Ancient Greek Sites",color:"#ffae00",type:"point",radius:6,url:"data/ancient_greek_sites.geojson",preload:false},{id:"roman",label:"Roman World",color:"#ff4444",type:"point",radius:6,url:"data/roman_world.geojson",preload:false},{id:"egypt",label:"Ancient Egypt",color:"#ffff00",type:"point",radius:6,url:"data/ancient_egypt.geojson",preload:false},{id:"mesopotamia",label:"Mesopotamia & Persia",color:"#b080ff",type:"point",radius:6,url:"data/mesopotamia_persia.geojson",preload:false},{id:"indus",label:"Indus & South Asia",color:"#00ff88",type:"point",radius:6,url:"data/indus_south_asia.geojson",preload:false},{id:"asia",label:"East & Southeast Asia",color:"#00aaff",type:"point",radius:6,url:"data/east_southeast_asia.geojson",preload:false},{id:"americas",label:"Ancient Americas",color:"#ff8800",type:"point",radius:6,url:"data/ancient_americas.geojson",preload:false}]},{group:"Heritage Starter Layers (GeoJSON)",layers:[{id:"unesco_starter",label:"UNESCO-tagged Starter Sites",color:"#00ffff",type:"point",radius:7,url:"data/unesco_starter_sites.geojson",preload:false},{id:"prehistoric",label:"Prehistoric Monuments",color:"#ffffff",type:"point",radius:6,url:"data/prehistoric_monuments.geojson",preload:false}]},{group:"Mythic Geography & Routes (GeoJSON)",layers:[{id:"mythic",label:"Greek Mythic Geography",color:"#ff00ff",type:"point",radius:6,url:"data/greek_mythic_geography.geojson",preload:false},{id:"routes",label:"Ancient Learning Routes",color:"#66ff66",type:"line",width:2,url:"data/ancient_learning_routes.geojson",preload:false}]}];
 window.initVentusMap({config:classicsConfig,center:[15,25],zoom:1.55});
