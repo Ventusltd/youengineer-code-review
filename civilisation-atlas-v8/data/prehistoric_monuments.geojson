@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "name": "Prehistoric Monuments",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Stonehenge", "civilisation": "Neolithic Britain", "period": "Neolithic to Bronze Age", "region": "Britain", "summary": "Prehistoric stone circle in southern Britain.", "quest": "Study alignment, ritual and labour." }, "geometry": { "type": "Point", "coordinates": [-1.826, 51.179] } },
+    { "type": "Feature", "properties": { "name": "Skara Brae", "civilisation": "Neolithic Britain", "period": "Neolithic", "region": "Orkney", "summary": "Preserved stone-built Neolithic settlement.", "quest": "Compare domestic architecture with monuments." }, "geometry": { "type": "Point", "coordinates": [-3.341, 59.049] } },
+    { "type": "Feature", "properties": { "name": "Newgrange", "civilisation": "Neolithic Ireland", "period": "Neolithic", "region": "Ireland", "summary": "Passage tomb famous for winter solstice alignment.", "quest": "Explore timekeeping in architecture." }, "geometry": { "type": "Point", "coordinates": [-6.475, 53.694] } },
+    { "type": "Feature", "properties": { "name": "Gobekli Tepe", "civilisation": "Prehistoric Anatolia", "period": "Neolithic", "region": "Anatolia", "summary": "Prehistoric monumental site in southeast Turkey.", "quest": "Ask whether temples came before cities." }, "geometry": { "type": "Point", "coordinates": [38.923, 37.223] } },
+    { "type": "Feature", "properties": { "name": "Catalhoyuk", "civilisation": "Neolithic Anatolia", "period": "Neolithic", "region": "Anatolia", "summary": "Dense early settlement with houses and wall art.", "quest": "Compare village life with later city systems." }, "geometry": { "type": "Point", "coordinates": [32.826, 37.667] } },
+    { "type": "Feature", "properties": { "name": "Lascaux", "civilisation": "Palaeolithic Europe", "period": "Palaeolithic", "region": "France", "summary": "Cave art site associated with Ice Age image-making.", "quest": "Ask what art can reveal before writing exists." }, "geometry": { "type": "Point", "coordinates": [1.17, 45.053] } },
+    { "type": "Feature", "properties": { "name": "Altamira", "civilisation": "Palaeolithic Europe", "period": "Palaeolithic", "region": "Spain", "summary": "Major prehistoric cave art site in northern Spain.", "quest": "Compare natural cave forms with painted figures." }, "geometry": { "type": "Point", "coordinates": [-4.116, 43.377] } }
+  ]
+}
