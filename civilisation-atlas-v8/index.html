@@ -8,115 +8,37 @@
     <link href="ventusv8.css" rel="stylesheet" />
 </head>
 <body>
-
 <div id="fatal-banner">CRITICAL ERROR: SYSTEM DEPENDENCIES FAILED TO LOAD</div>
 <button id="btn-fullscreen-exit" onclick="exitFullscreen()">✕ Exit</button>
 <div id="fs-curtain-tab">⬇ Layers</div>
 <div id="fs-curtain"><div id="fs-curtain-keys"></div></div>
-<div id="fs-letterhead">
-    <div class="ventus-main">Ventus</div>
-    <div class="ventus-sub">Cables &amp; Connectivity&reg;</div>
-</div>
-
+<div id="fs-letterhead"><div class="ventus-main">Ventus</div><div class="ventus-sub">Cables &amp; Connectivity&reg;</div></div>
 <div class="dashboard">
     <div class="hud-header">
-        <div>
-            <small style="color:#888">SYSTEM TIME</small><br>
-            <span class="hud-val" id="clock">--:--:--</span><br>
-            <span id="date" style="font-size:11px;color:#888;">--/--/----</span>
-        </div>
-        <div class="ventus-brand">
-            <div class="ventus-main">Ventus</div>
-            <div class="ventus-sub">Cables &amp; Connectivity&reg;</div>
-        </div>
-        <div style="text-align:right">
-            <small style="color:#888">ATLAS MODE</small><br>
-            <span class="hud-val" id="days" style="color:#ff9d00">ZERO LAYERS</span>
-        </div>
+        <div><small style="color:#888">SYSTEM TIME</small><br><span class="hud-val" id="clock">--:--:--</span><br><span id="date" style="font-size:11px;color:#888;">--/--/----</span></div>
+        <div class="ventus-brand"><div class="ventus-main">Ventus</div><div class="ventus-sub">Cables &amp; Connectivity&reg;</div></div>
+        <div style="text-align:right"><small style="color:#888">ATLAS MODE</small><br><span class="hud-val" id="days" style="color:#ff9d00">ZERO LAYERS</span></div>
     </div>
-
     <div class="map-container" id="map-container">
         <div id="map"></div>
-        <div class="custom-map-attrib">
-            Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | © CARTO | Local civilisation GeoJSON only
-        </div>
+        <div class="custom-map-attrib">Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | © CARTO | Local civilisation GeoJSON only</div>
         <button id="btn-fullscreen" onclick="enterFullscreen()" title="Fullscreen">⛶</button>
-
-        <div class="search-bar-wrapper">
-            <div style="position:relative">
-                <input class="search-input" id="search-input" type="text" placeholder="Search site name..." autocomplete="off" />
-                <div class="search-results" id="search-results"></div>
-            </div>
-            <button class="search-btn" id="search-btn">GO</button>
-        </div>
-
-        <div class="map-controls">
-            <button class="map-ctrl-btn" id="btn-export">⬇ Export CSV</button>
-            <button class="map-ctrl-btn" id="btn-clear">✕ Clear Layers</button>
-            <button class="map-ctrl-btn" id="btn-reset">◎ Reset View</button>
-        </div>
-
+        <div class="search-bar-wrapper"><div style="position:relative"><input class="search-input" id="search-input" type="text" placeholder="Search site name..." autocomplete="off" /><div class="search-results" id="search-results"></div></div><button class="search-btn" id="search-btn">GO</button></div>
+        <div class="map-controls"><button class="map-ctrl-btn" id="btn-export">⬇ Export CSV</button><button class="map-ctrl-btn" id="btn-clear">✕ Clear Layers</button><button class="map-ctrl-btn" id="btn-reset">◎ Reset View</button></div>
         <div class="podcast-shoutout">Civilisation Atlas V8<br>Static GeoJSON learning layers</div>
     </div>
-
     <div class="scada-wrapper">
-        <div class="scada-brand">
-            <div>
-                <div class="scada-brand-main">Ventus</div>
-                <div class="scada-brand-sub">Cables &amp; Connectivity&reg;</div>
-            </div>
-            <div class="scada-brand-tag">youengineer-code-review | classics map shell</div>
-        </div>
-        <div class="status-legend">
-            <div class="status-dot"><span style="background:#ffae00"></span>Classical civilisation</div>
-            <div class="status-dot"><span style="background:#00ffff"></span>UNESCO starter</div>
-            <div class="status-dot"><span style="background:#ff00ff"></span>Mythic geography</div>
-            <div class="status-dot"><span style="background:#66ff66"></span>Ancient routes</div>
-        </div>
+        <div class="scada-brand"><div><div class="scada-brand-main">Ventus</div><div class="scada-brand-sub">Cables &amp; Connectivity&reg;</div></div><div class="scada-brand-tag">youengineer-code-review | classics map shell</div></div>
+        <div class="status-legend"><div class="status-dot"><span style="background:#ffae00"></span>Classical civilisation</div><div class="status-dot"><span style="background:#00ffff"></span>UNESCO starter</div><div class="status-dot"><span style="background:#ff00ff"></span>Mythic geography</div><div class="status-dot"><span style="background:#66ff66"></span>Ancient routes</div></div>
         <div class="scada-keys" id="scada-ui-container"></div>
-        <div class="disclaimer-box">
-            This interface is a clean educational adaptation of the V8 atlas pattern. It imports no GlobalGrid2050 energy layers, REPD data, grid data, EV data, supermarket data, transport data or energy APIs. The visible layers are local starter GeoJSON files for classical civilisation learning and should be expanded or verified before formal educational use.
-        </div>
+        <div class="disclaimer-box">Clean V8 atlas shell. Original atlas datasets are not imported. Current layers are local starter GeoJSON files for classical civilisation learning.</div>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 <script src="ventus-corev8engine.js"></script>
 <script>
-    const classicsConfig = [
-        {
-            group: "Classical Civilisations (GeoJSON)",
-            layers: [
-                { id: "greek", label: "Ancient Greek Sites", color: "#ffae00", type: "point", radius: 6, url: "data/ancient_greek_sites.geojson", preload: false },
-                { id: "roman", label: "Roman World", color: "#ff4444", type: "point", radius: 6, url: "data/roman_world.geojson", preload: false },
-                { id: "egypt", label: "Ancient Egypt", color: "#ffff00", type: "point", radius: 6, url: "data/ancient_egypt.geojson", preload: false },
-                { id: "mesopotamia", label: "Mesopotamia & Persia", color: "#b080ff", type: "point", radius: 6, url: "data/mesopotamia_persia.geojson", preload: false },
-                { id: "indus", label: "Indus & South Asia", color: "#00ff88", type: "point", radius: 6, url: "data/indus_south_asia.geojson", preload: false },
-                { id: "asia", label: "East & Southeast Asia", color: "#00aaff", type: "point", radius: 6, url: "data/east_southeast_asia.geojson", preload: false },
-                { id: "americas", label: "Ancient Americas", color: "#ff8800", type: "point", radius: 6, url: "data/ancient_americas.geojson", preload: false }
-            ]
-        },
-        {
-            group: "Heritage Starter Layers (GeoJSON)",
-            layers: [
-                { id: "unesco_starter", label: "UNESCO-tagged Starter Sites", color: "#00ffff", type: "point", radius: 7, url: "data/unesco_starter_sites.geojson", preload: false },
-                { id: "prehistoric", label: "Prehistoric Monuments", color: "#ffffff", type: "point", radius: 6, url: "data/prehistoric_monuments.geojson", preload: false }
-            ]
-        },
-        {
-            group: "Mythic Geography & Routes (GeoJSON)",
-            layers: [
-                { id: "mythic", label: "Greek Mythic Geography", color: "#ff00ff", type: "point", radius: 6, url: "data/greek_mythic_geography.geojson", preload: false },
-                { id: "routes", label: "Ancient Learning Routes", color: "#66ff66", type: "line", width: 2.0, url: "data/ancient_learning_routes.geojson", preload: false }
-            ]
-        }
-    ];
-
-    window.initVentusMap({
-        config: classicsConfig,
-        center: [15, 25],
-        zoom: 1.55
-    });
+const classicsConfig=[{group:"Classical Civilisations (GeoJSON)",layers:[{id:"greek",label:"Ancient Greek Sites",color:"#ffae00",type:"point",radius:6,url:"data/ancient_greek_sites.geojson",preload:false},{id:"roman",label:"Roman World",color:"#ff4444",type:"point",radius:6,url:"data/roman_world.geojson",preload:false},{id:"egypt",label:"Ancient Egypt",color:"#ffff00",type:"point",radius:6,url:"data/ancient_egypt.geojson",preload:false},{id:"mesopotamia",label:"Mesopotamia & Persia",color:"#b080ff",type:"point",radius:6,url:"data/mesopotamia_persia.geojson",preload:false},{id:"indus",label:"Indus & South Asia",color:"#00ff88",type:"point",radius:6,url:"data/indus_south_asia.geojson",preload:false},{id:"asia",label:"East & Southeast Asia",color:"#00aaff",type:"point",radius:6,url:"data/east_southeast_asia.geojson",preload:false},{id:"americas",label:"Ancient Americas",color:"#ff8800",type:"point",radius:6,url:"data/ancient_americas.geojson",preload:false}]},{group:"Heritage Starter Layers (GeoJSON)",layers:[{id:"unesco_starter",label:"UNESCO-tagged Starter Sites",color:"#00ffff",type:"point",radius:7,url:"data/unesco_starter_sites.geojson",preload:false},{id:"prehistoric",label:"Prehistoric Monuments",color:"#ffffff",type:"point",radius:6,url:"data/prehistoric_monuments.geojson",preload:false}]},{group:"Mythic Geography & Routes (GeoJSON)",layers:[{id:"mythic",label:"Greek Mythic Geography",color:"#ff00ff",type:"point",radius:6,url:"data/greek_mythic_geography.geojson",preload:false},{id:"routes",label:"Ancient Learning Routes",color:"#66ff66",type:"line",width:2,url:"data/ancient_learning_routes.geojson",preload:false}]}];
+window.initVentusMap({config:classicsConfig,center:[15,25],zoom:1.55});
 </script>
 </body>
 </html>
