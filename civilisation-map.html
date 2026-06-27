@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouEngineer Civilisation Atlas</title>
+  <link rel="stylesheet" href="civilisation-map.css" />
+  <script src="civilisation-map-data.js" defer></script>
+  <script src="civilisation-map.js" defer></script>
+</head>
+<body>
+  <main class="atlas-shell">
+    <header class="atlas-hero">
+      <p class="eyebrow">YouEngineer Mini Project 02</p>
+      <h1>Civilisation Atlas</h1>
+      <p>
+        A static GIS-style global map of ancient sites, world heritage inspiration points and creative technology locations. Built from local GeoJSON-style data with no external map API.
+      </p>
+      <nav class="nav-row" aria-label="Project navigation">
+        <a class="nav-link" href="index.html">Medusa Time Temple</a>
+        <a class="nav-link" href="#map">Open the map</a>
+        <a class="nav-link" href="https://github.com/Ventusltd/youengineer-code-review">View repository</a>
+      </nav>
+    </header>
+
+    <section class="atlas-grid" id="map" aria-label="Civilisation atlas interface">
+      <div class="sidebar-stack">
+        <aside class="control-panel" aria-label="Map controls">
+          <h2>Layer Control</h2>
+          <label class="form-line">
+            Search sites
+            <input id="siteSearch" type="search" placeholder="Try Egypt, Maya, Kyoto, temple, water..." />
+          </label>
+
+          <label class="layer-toggle">
+            <input id="unescoOnly" type="checkbox" />
+            <span>Show UNESCO starter sites only</span>
+            <span class="layer-swatch" style="background: #9e6b2e;"></span>
+          </label>
+
+          <div class="layer-list" id="layerList" aria-label="GeoJSON layer toggles"></div>
+
+          <div class="button-row">
+            <button type="button" id="randomSite">Random site</button>
+            <button type="button" id="resetMap">Reset map</button>
+          </div>
+
+          <div class="stat-grid" aria-label="Map statistics">
+            <div class="stat-card"><strong id="totalCount">0</strong><span>Total</span></div>
+            <div class="stat-card"><strong id="visibleCount">0</strong><span>Visible</span></div>
+            <div class="stat-card"><strong id="unescoCount">0</strong><span>UNESCO</span></div>
+          </div>
+        </aside>
+
+        <aside class="info-panel" aria-label="Selected site information">
+          <h2 id="selectedTitle">Select a site</h2>
+          <p id="selectedBody">Choose a marker on the map or a site in the list.</p>
+          <div class="site-meta" id="selectedMeta"></div>
+          <div class="prompt-box">
+            <p><strong>Student prompt:</strong> <span id="selectedPrompt">Explore how geography shapes civilisation.</span></p>
+          </div>
+
+          <h2>Visible Sites</h2>
+          <p class="small-note">The list updates with the search box, layer toggles and UNESCO filter.</p>
+          <div class="site-list" id="siteList" aria-label="Visible site list"></div>
+        </aside>
+      </div>
+
+      <section class="map-panel" aria-label="World map panel">
+        <div class="map-toolbar">
+          <h2>Static SVG World Map</h2>
+          <div class="region-buttons" aria-label="Region zoom controls">
+            <button type="button" data-region="world">World</button>
+            <button type="button" data-region="mediterranean">Mediterranean</button>
+            <button type="button" data-region="africa">Africa</button>
+            <button type="button" data-region="asia">Asia</button>
+            <button type="button" data-region="americas">Americas</button>
+            <button type="button" data-region="pacific">Pacific</button>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <svg id="worldMap" viewBox="0 0 1000 500" role="img" aria-label="Global civilisation map plotted from longitude and latitude">
+            <rect width="1000" height="500" fill="transparent"></rect>
+            <g id="graticuleLayer" class="graticule"></g>
+            <g id="landLayer"></g>
+            <g id="markerLayer"></g>
+            <g id="labelLayer"></g>
+          </svg>
+          <div class="tooltip-card" id="tooltipCard" hidden></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-quest" aria-label="Civilisation atlas code review tasks">
+      <h2>Code Review Quests</h2>
+      <ul>
+        <li>Inspect <code>civilisation-map-data.js</code> and add one new site using longitude and latitude.</li>
+        <li>Change one layer colour in <code>CIVILISATION_LAYER_CONFIG</code>.</li>
+        <li>Find <code>projectLonLat()</code> and explain how longitude and latitude become SVG coordinates.</li>
+        <li>Find <code>haversineKm()</code> and explain why distance on Earth is not the same as flat screen distance.</li>
+        <li>Turn one student prompt into a better question and commit the improvement.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
