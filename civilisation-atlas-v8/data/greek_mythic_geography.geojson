@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "name": "Greek Mythic Geography",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Mount Olympus", "civilisation": "Greek mythic geography", "period": "Mythic tradition", "region": "Greece", "summary": "Mountain associated with the Olympian gods.", "quest": "Ask why high places become sacred in storytelling." }, "geometry": { "type": "Point", "coordinates": [22.358, 40.085] } },
+    { "type": "Feature", "properties": { "name": "Delos", "civilisation": "Greek mythic geography", "period": "Archaic to Hellenistic", "region": "Cyclades", "summary": "Island associated with Apollo and Artemis.", "quest": "Connect myth, sanctuary and maritime networks." }, "geometry": { "type": "Point", "coordinates": [25.266, 37.393] } },
+    { "type": "Feature", "properties": { "name": "Ithaca", "civilisation": "Greek epic geography", "period": "Homeric tradition", "region": "Ionian Islands", "summary": "Island associated with Odysseus in epic tradition.", "quest": "Ask how homecoming becomes a map story." }, "geometry": { "type": "Point", "coordinates": [20.718, 38.428] } },
+    { "type": "Feature", "properties": { "name": "Crete", "civilisation": "Greek mythic geography", "period": "Bronze Age and mythic tradition", "region": "Crete", "summary": "Island connected with Minos, the Labyrinth and the Minotaur.", "quest": "Compare archaeology with mythic geography." }, "geometry": { "type": "Point", "coordinates": [25.13, 35.24] } },
+    { "type": "Feature", "properties": { "name": "Acheron River", "civilisation": "Greek mythic geography", "period": "Mythic tradition", "region": "Epirus", "summary": "River associated with underworld journeys in Greek tradition.", "quest": "Study how landscapes become thresholds." }, "geometry": { "type": "Point", "coordinates": [20.614, 39.237] } },
+    { "type": "Feature", "properties": { "name": "Sparta", "civilisation": "Greek epic and history", "period": "Archaic to Classical", "region": "Greece", "summary": "City associated with Helen, Menelaus and later Spartan history.", "quest": "Compare mythic memory with political identity." }, "geometry": { "type": "Point", "coordinates": [22.429, 37.074] } },
+    { "type": "Feature", "properties": { "name": "Thebes", "civilisation": "Greek myth and history", "period": "Bronze Age to Classical", "region": "Greece", "summary": "City associated with Cadmus, Oedipus and later Greek history.", "quest": "Ask why tragic stories attach to particular cities." }, "geometry": { "type": "Point", "coordinates": [23.318, 38.325] } }
+  ]
+}
