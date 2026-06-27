@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "name": "Ancient Greek Sites",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Acropolis of Athens", "civilisation": "Ancient Greek", "period": "5th century BCE", "region": "Greece", "summary": "Hilltop sanctuary and civic symbol of classical Athens.", "quest": "Compare architecture, democracy and mythology in one place." }, "geometry": { "type": "Point", "coordinates": [23.726, 37.971] } },
+    { "type": "Feature", "properties": { "name": "Delphi", "civilisation": "Ancient Greek", "period": "Archaic to Roman", "region": "Greece", "summary": "Sanctuary associated with Apollo and the oracle.", "quest": "Ask why leaders travelled for prophecy before decisions." }, "geometry": { "type": "Point", "coordinates": [22.501, 38.482] } },
+    { "type": "Feature", "properties": { "name": "Olympia", "civilisation": "Ancient Greek", "period": "Archaic to Roman", "region": "Greece", "summary": "Sanctuary linked with the ancient Olympic Games.", "quest": "Trace sport, ritual and reputation." }, "geometry": { "type": "Point", "coordinates": [21.63, 37.637] } },
+    { "type": "Feature", "properties": { "name": "Knossos", "civilisation": "Minoan", "period": "Bronze Age", "region": "Crete", "summary": "Major Minoan palace site on Crete.", "quest": "Connect palace planning with labyrinth myths." }, "geometry": { "type": "Point", "coordinates": [25.163, 35.298] } },
+    { "type": "Feature", "properties": { "name": "Mycenae", "civilisation": "Mycenaean Greek", "period": "Bronze Age", "region": "Greece", "summary": "Fortified Bronze Age centre associated with early Greek tradition.", "quest": "Compare walls, gates and power before classical Athens." }, "geometry": { "type": "Point", "coordinates": [22.754, 37.73] } },
+    { "type": "Feature", "properties": { "name": "Troy", "civilisation": "Aegean and Anatolian", "period": "Bronze Age to Roman", "region": "Anatolia", "summary": "Layered archaeological site linked with the Trojan cycle.", "quest": "Separate archaeology, poetry and later storytelling." }, "geometry": { "type": "Point", "coordinates": [26.238, 39.957] } },
+    { "type": "Feature", "properties": { "name": "Ephesus", "civilisation": "Greek and Roman", "period": "Classical to Roman", "region": "Anatolia", "summary": "Major ancient city with Greek, Roman and early Christian layers.", "quest": "Identify how port cities become knowledge cities." }, "geometry": { "type": "Point", "coordinates": [27.34, 37.941] } },
+    { "type": "Feature", "properties": { "name": "Epidaurus", "civilisation": "Ancient Greek", "period": "Classical", "region": "Greece", "summary": "Sanctuary of Asklepios with a famous theatre.", "quest": "Explore health, acoustics and sacred space." }, "geometry": { "type": "Point", "coordinates": [23.075, 37.596] } }
+  ]
+}
