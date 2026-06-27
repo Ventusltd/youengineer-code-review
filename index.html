@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medusa's Time Temple</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="myths.css" />
+  <script src="myths.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="myth-reader.js" defer></script>
 </head>
 <body>
   <main class="temple-shell">
@@ -13,7 +16,7 @@
       <p class="eyebrow">YouEngineer Mini Project 01</p>
       <h1>Medusa's Time Temple</h1>
       <p class="subtitle">
-        A classical civilisation inspired calendar and clock for learning HTML, CSS and JavaScript.
+        A classical civilisation inspired calendar, clock and Greek mythology reader for learning HTML, CSS and JavaScript.
       </p>
       <p class="frieze">ΑΘΗΝΑ · ΧΡΟΝΟΣ · ΜΕΔΟΥΣΑ · ΣΟΦΙΑ</p>
     </section>
@@ -83,6 +86,69 @@
           </ul>
         </section>
       </article>
+    </section>
+
+    <section class="myth-library" aria-label="Greek mythology library">
+      <div class="library-intro">
+        <p class="eyebrow">Greek Mythology Library</p>
+        <h2>Choose a favourite figure or story</h2>
+        <p>
+          Search the temple archive, filter by theme, or choose a random myth. Each entry is short enough to read quickly and structured enough to inspect in code review.
+        </p>
+        <p class="entry-count" id="mythCount">Loading mythology entries...</p>
+      </div>
+
+      <div class="library-controls" aria-label="Mythology selection controls">
+        <label class="control-group">
+          Search
+          <input id="mythSearch" type="search" placeholder="Try Athena, Hades, heroes, underworld..." />
+        </label>
+
+        <label class="control-group">
+          Theme
+          <select id="mythGroup" aria-label="Choose mythology theme"></select>
+        </label>
+
+        <label class="control-group">
+          Figure or story
+          <select id="mythSelect" aria-label="Choose mythology entry"></select>
+        </label>
+
+        <button type="button" class="random-button" id="randomMyth">Random myth</button>
+      </div>
+
+      <article class="myth-card" aria-live="polite">
+        <div class="myth-symbol" id="mythSymbol" aria-hidden="true">🏛️</div>
+        <div>
+          <p class="myth-category" id="mythCategory">Greek mythology</p>
+          <h2 id="mythName">Loading...</h2>
+          <p class="myth-summary" id="mythSummary">Preparing the archive.</p>
+          <p class="myth-story" id="mythStory"></p>
+          <p class="learning-line"><strong>Learning prompt:</strong> <span id="mythLesson"></span></p>
+          <div class="tag-row" id="mythTags" aria-label="Mythology tags"></div>
+        </div>
+      </article>
+
+      <div class="library-footer">
+        <section class="quest-box" aria-label="Mythology code quests">
+          <h3>Mythology Code Quests</h3>
+          <ul>
+            <li>Add one new entry to <code>myths.js</code>.</li>
+            <li>Change the filter order in <code>myth-reader.js</code>.</li>
+            <li>Improve the mobile layout in <code>myths.css</code>.</li>
+            <li>Make a pull request explaining the change.</li>
+          </ul>
+        </section>
+
+        <section class="quest-box" aria-label="Public showcase notes">
+          <h3>Public Showcase Notes</h3>
+          <ul>
+            <li>No personal names are required for the page to work.</li>
+            <li>The mythology content is local to the repo, so the site does not depend on a third-party API.</li>
+            <li>The data structure is simple enough for beginner code review.</li>
+          </ul>
+        </section>
+      </div>
     </section>
   </main>
 </body>
