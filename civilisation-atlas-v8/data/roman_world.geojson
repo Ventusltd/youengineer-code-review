@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "name": "Roman World",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Colosseum", "civilisation": "Roman", "period": "1st century CE", "region": "Italy", "summary": "Monumental amphitheatre in ancient Rome.", "quest": "Discuss spectacle, engineering and public power." }, "geometry": { "type": "Point", "coordinates": [12.492, 41.89] } },
+    { "type": "Feature", "properties": { "name": "Pompeii", "civilisation": "Roman", "period": "1st century CE", "region": "Italy", "summary": "Roman city preserved by the eruption of Vesuvius.", "quest": "Use the site as a frozen interface into daily life." }, "geometry": { "type": "Point", "coordinates": [14.486, 40.749] } },
+    { "type": "Feature", "properties": { "name": "Herculaneum", "civilisation": "Roman", "period": "1st century CE", "region": "Italy", "summary": "Roman town preserved by volcanic material.", "quest": "Compare preservation conditions with Pompeii." }, "geometry": { "type": "Point", "coordinates": [14.347, 40.806] } },
+    { "type": "Feature", "properties": { "name": "Hadrian's Wall", "civilisation": "Roman Britain", "period": "2nd century CE", "region": "Britain", "summary": "Frontier wall across northern Britain.", "quest": "Ask how borders become architecture." }, "geometry": { "type": "Point", "coordinates": [-2.292, 55.024] } },
+    { "type": "Feature", "properties": { "name": "Leptis Magna", "civilisation": "Roman Africa", "period": "Roman", "region": "North Africa", "summary": "Major Roman city in present-day Libya.", "quest": "Ask how empire reshapes local urban identity." }, "geometry": { "type": "Point", "coordinates": [14.293, 32.638] } },
+    { "type": "Feature", "properties": { "name": "Volubilis", "civilisation": "Roman Mauretania", "period": "Roman", "region": "North Africa", "summary": "Roman archaeological site in Morocco.", "quest": "Trace the edge of empire on a map." }, "geometry": { "type": "Point", "coordinates": [-5.555, 34.071] } },
+    { "type": "Feature", "properties": { "name": "Jerash", "civilisation": "Roman Near East", "period": "Roman", "region": "Jordan", "summary": "Major Roman city site in Jordan.", "quest": "Compare city grids, theatres and colonnaded streets." }, "geometry": { "type": "Point", "coordinates": [35.891, 32.28] } },
+    { "type": "Feature", "properties": { "name": "Bath Roman Baths", "civilisation": "Roman Britain", "period": "Roman", "region": "Britain", "summary": "Roman bathing and temple complex in Britain.", "quest": "Study water, ritual and urban life." }, "geometry": { "type": "Point", "coordinates": [-2.36, 51.381] } }
+  ]
+}
