@@ -1,0 +1,12 @@
+{
+  "type": "FeatureCollection",
+  "name": "Ancient Egypt",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Giza Pyramid Complex", "civilisation": "Ancient Egyptian", "period": "Old Kingdom", "region": "Egypt", "summary": "Pyramids, temples and necropolis structures near Cairo.", "quest": "Measure how architecture expresses belief and administration." }, "geometry": { "type": "Point", "coordinates": [31.132, 29.979] } },
+    { "type": "Feature", "properties": { "name": "Karnak Temple Complex", "civilisation": "Ancient Egyptian", "period": "Middle Kingdom to Ptolemaic", "region": "Egypt", "summary": "Vast temple complex near Luxor.", "quest": "Follow layers of kingship, ritual and expansion." }, "geometry": { "type": "Point", "coordinates": [32.657, 25.719] } },
+    { "type": "Feature", "properties": { "name": "Valley of the Kings", "civilisation": "Ancient Egyptian", "period": "New Kingdom", "region": "Egypt", "summary": "Royal burial landscape on the west bank of the Nile.", "quest": "Ask how hidden spaces can still project power." }, "geometry": { "type": "Point", "coordinates": [32.601, 25.74] } },
+    { "type": "Feature", "properties": { "name": "Abu Simbel", "civilisation": "Ancient Egyptian", "period": "New Kingdom", "region": "Egypt", "summary": "Rock-cut temples associated with Ramesses II.", "quest": "Ask how monuments project power across distance." }, "geometry": { "type": "Point", "coordinates": [31.625, 22.337] } },
+    { "type": "Feature", "properties": { "name": "Saqqara", "civilisation": "Ancient Egyptian", "period": "Old Kingdom onward", "region": "Egypt", "summary": "Necropolis including the Step Pyramid of Djoser.", "quest": "Compare stepped pyramid form with later smooth pyramids." }, "geometry": { "type": "Point", "coordinates": [31.216, 29.871] } },
+    { "type": "Feature", "properties": { "name": "Amarna", "civilisation": "Ancient Egyptian", "period": "New Kingdom", "region": "Egypt", "summary": "Short-lived capital linked with Akhenaten.", "quest": "Study what happens when power tries to redesign religion and city form." }, "geometry": { "type": "Point", "coordinates": [30.897, 27.645] } }
+  ]
+}
