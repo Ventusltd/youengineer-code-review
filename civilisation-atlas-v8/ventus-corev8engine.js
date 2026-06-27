@@ -8,8 +8,11 @@ window.initVentusMap = function({ config, center, zoom }) {
 
     function escapeHTML(value) {
         return String(value ?? '')
-            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
 
     function getName(properties) {
@@ -24,6 +27,8 @@ window.initVentusMap = function({ config, center, zoom }) {
     const layerConfigById = new Map(GRID_CONFIG.flatMap(group => group.layers).map(layer => [layer.id, layer]));
     const loadedGeoJSON = new Map();
     const runtime = {};
+    let activePopup = null;
+    let satelliteActive = false;
 
     GRID_CONFIG.forEach(group => group.layers.forEach(layer => {
         runtime[layer.id] = { loading: false, loaded: false, visible: false, count: 0 };
@@ -39,8 +44,6 @@ window.initVentusMap = function({ config, center, zoom }) {
 
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-left');
 
-    let activePopup = null;
-
     function updateClock() {
         const now = new Date();
         document.getElementById('clock').textContent = now.toLocaleTimeString('en-GB');
@@ -48,7 +51,8 @@ window.initVentusMap = function({ config, center, zoom }) {
             weekday: 'short', day: '2-digit', month: 'short', year: 'numeric'
         });
         const active = Object.values(runtime).filter(item => item.visible).length;
-        document.getElementById('days').textContent = active === 0 ? 'ZERO LAYERS' : `${active} LAYER${active === 1 ? '' : 'S'}`;
+        const mode = satelliteActive ? 'SAT' : 'MAP';
+        document.getElementById('days').textContent = active === 0 ? `${mode} · ZERO LAYERS` : `${mode} · ${active} LAYER${active === 1 ? '' : 'S'}`;
     }
 
     setInterval(updateClock, 1000);
@@ -57,13 +61,47 @@ window.initVentusMap = function({ config, center, zoom }) {
     function sourceId(layerId) { return `src-${layerId}`; }
     function layerId(layerId) { return `lyr-${layerId}`; }
 
+    function addSatelliteLayer() {
+        if (map.getSource('satellite-source')) return;
+        map.addSource('satellite-source', {
+            type: 'raster',
+            tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+            tileSize: 256,
+            attribution: 'Satellite imagery © Esri'
+        });
+        map.addLayer({
+            id: 'satellite-layer',
+            type: 'raster',
+            source: 'satellite-source',
+            layout: { visibility: 'none' },
+            paint: { 'raster-opacity': 0.92 }
+        });
+    }
+
+    function setSatelliteMode(active) {
+        satelliteActive = active;
+        const button = document.getElementById('btn-satellite');
+        if (map.getLayer('satellite-layer')) {
+            map.setLayoutProperty('satellite-layer', 'visibility', active ? 'visible' : 'none');
+        }
+        if (button) {
+            button.classList.toggle('active', active);
+            button.textContent = active ? '◩ Map Mode' : '◩ Satellite';
+        }
+        updateClock();
+    }
+
+    function toggleSatelliteMode() {
+        setSatelliteMode(!satelliteActive);
+    }
+
     function buildPointPaint(layer) {
         return {
             'circle-color': layer.color,
             'circle-radius': layer.radius || 6,
             'circle-stroke-color': '#000000',
             'circle-stroke-width': 1.5,
-            'circle-opacity': 0.92
+            'circle-opacity': 0.95
         };
     }
 
@@ -87,7 +125,7 @@ window.initVentusMap = function({ config, center, zoom }) {
                 paint: {
                     'line-color': layer.color,
                     'line-width': layer.width || 2,
-                    'line-opacity': 0.85
+                    'line-opacity': 0.9
                 },
                 layout: { visibility: 'none' }
             });
@@ -112,7 +150,7 @@ window.initVentusMap = function({ config, center, zoom }) {
             });
         }
 
-        map.on('click', lid, (event) => {
+        map.on('click', lid, event => {
             const feature = event.features && event.features[0];
             if (!feature) return;
             openFeaturePopup(feature, layer);
@@ -147,9 +185,7 @@ window.initVentusMap = function({ config, center, zoom }) {
         const layer = layerConfigById.get(layerIdValue);
         if (!layer) return;
 
-        if (visible) {
-            await ensureLayerLoaded(layer);
-        }
+        if (visible) await ensureLayerLoaded(layer);
 
         const lid = layerId(layerIdValue);
         if (map.getLayer(lid)) {
@@ -161,8 +197,8 @@ window.initVentusMap = function({ config, center, zoom }) {
     }
 
     function updateLayerStatus(layerIdValue, text) {
-        const element = document.querySelector(`[data-status="${layerIdValue}"]`);
-        if (element) element.textContent = text;
+        const elements = document.querySelectorAll(`[data-status="${layerIdValue}"]`);
+        elements.forEach(element => { element.textContent = text; });
     }
 
     function renderLayerControls(containerId) {
@@ -185,7 +221,13 @@ window.initVentusMap = function({ config, center, zoom }) {
                 const input = document.createElement('input');
                 input.type = 'checkbox';
                 input.checked = false;
-                input.addEventListener('change', () => setLayerVisibility(layer.id, input.checked));
+                input.addEventListener('change', () => {
+                    document.querySelectorAll(`input[data-layer-toggle="${layer.id}"]`).forEach(other => {
+                        if (other !== input) other.checked = input.checked;
+                    });
+                    setLayerVisibility(layer.id, input.checked);
+                });
+                input.dataset.layerToggle = layer.id;
 
                 const dot = document.createElement('span');
                 dot.className = 'key-dot';
@@ -221,13 +263,15 @@ window.initVentusMap = function({ config, center, zoom }) {
         return features;
     }
 
+    function popupCoordinates(feature) {
+        if (feature.geometry.type === 'Point') return feature.geometry.coordinates;
+        const flat = feature.geometry.coordinates.flat(Infinity);
+        return flat.length >= 2 ? [flat[0], flat[1]] : map.getCenter().toArray();
+    }
+
     function openFeaturePopup(feature, layer) {
         const props = feature.properties || {};
-        const coords = feature.geometry.type === 'Point'
-            ? feature.geometry.coordinates
-            : feature.geometry.coordinates.flat(Infinity).length >= 2
-                ? [feature.geometry.coordinates.flat(Infinity)[0], feature.geometry.coordinates.flat(Infinity)[1]]
-                : map.getCenter().toArray();
+        const coords = popupCoordinates(feature);
 
         if (activePopup) activePopup.remove();
         activePopup = new maplibregl.Popup({ maxWidth: '340px' })
@@ -274,9 +318,7 @@ window.initVentusMap = function({ config, center, zoom }) {
             item.className = 'search-result-item';
             item.innerHTML = `<b>${escapeHTML(getName(props))}</b><br>${escapeHTML(props.civilisation || layer.label)} · ${escapeHTML(props.region || '')}`;
             item.addEventListener('click', () => {
-                if (feature.geometry.type === 'Point') {
-                    map.flyTo({ center: feature.geometry.coordinates, zoom: 7, speed: 0.9 });
-                }
+                if (feature.geometry.type === 'Point') map.flyTo({ center: feature.geometry.coordinates, zoom: 15, speed: 0.9 });
                 openFeaturePopup(feature, layer);
                 results.style.display = 'none';
             });
@@ -291,16 +333,7 @@ window.initVentusMap = function({ config, center, zoom }) {
         getVisibleFeatures().forEach(({ feature, layer }) => {
             const props = feature.properties || {};
             const coords = feature.geometry.type === 'Point' ? feature.geometry.coordinates : ['', ''];
-            rows.push([
-                layer.label,
-                getName(props),
-                props.civilisation || '',
-                props.period || '',
-                props.region || '',
-                coords[0],
-                coords[1],
-                getSummary(props)
-            ]);
+            rows.push([layer.label, getName(props), props.civilisation || '', props.period || '', props.region || '', coords[0], coords[1], getSummary(props)]);
         });
 
         const csv = rows.map(row => row.map(value => `"${String(value ?? '').replace(/"/g, '""')}"`).join(',')).join('\n');
@@ -318,6 +351,7 @@ window.initVentusMap = function({ config, center, zoom }) {
             const lid = layerId(layer.id);
             if (map.getLayer(lid)) map.setLayoutProperty(lid, 'visibility', 'none');
             runtime[layer.id].visible = false;
+            updateLayerStatus(layer.id, runtime[layer.id].loaded ? `${runtime[layer.id].count}` : 'OFF');
         }));
         document.querySelectorAll('.key-item input[type="checkbox"]').forEach(input => input.checked = false);
         updateClock();
@@ -338,14 +372,14 @@ window.initVentusMap = function({ config, center, zoom }) {
     };
 
     map.on('load', () => {
+        addSatelliteLayer();
         renderLayerControls('scada-ui-container');
         renderLayerControls('fs-curtain-keys');
 
         document.getElementById('search-btn').addEventListener('click', runSearch);
-        document.getElementById('search-input').addEventListener('keydown', event => {
-            if (event.key === 'Enter') runSearch();
-        });
+        document.getElementById('search-input').addEventListener('keydown', event => { if (event.key === 'Enter') runSearch(); });
         document.getElementById('search-input').addEventListener('input', runSearch);
+        document.getElementById('btn-satellite').addEventListener('click', toggleSatelliteMode);
         document.getElementById('btn-export').addEventListener('click', exportVisibleCSV);
         document.getElementById('btn-clear').addEventListener('click', clearLayers);
         document.getElementById('btn-reset').addEventListener('click', resetView);
