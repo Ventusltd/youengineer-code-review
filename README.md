@@ -1,11 +1,11 @@
 # YouEngineer Code Review
 
-A private working repository for Anjali to practise professional code review, GitHub workflow, documentation, and engineering discipline.
+A public showcase and code review repository for practising professional code review, GitHub workflow, documentation, and engineering discipline.
 
 ## Task List
 
-1. Anjali to connect ChatGPT to her GitHub successfully.
-2. Manually create repos for YouEngineer, which will become her business for the rest of her career.
+1. Connect ChatGPT to GitHub successfully.
+2. Create the first YouEngineer repositories manually.
 3. Open the first mini project and inspect the HTML, CSS and JavaScript.
 4. Make one small visual change and commit it with a clear message.
 5. Ask for a code review before making the next change.
