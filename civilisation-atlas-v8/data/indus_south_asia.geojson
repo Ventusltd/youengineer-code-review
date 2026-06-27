@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "name": "Indus and South Asia",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Mohenjo-daro", "civilisation": "Indus Valley", "period": "Bronze Age", "region": "South Asia", "summary": "Major urban centre of the Indus Valley civilisation.", "quest": "Look for drainage, planning and civic engineering." }, "geometry": { "type": "Point", "coordinates": [68.138, 27.324] } },
+    { "type": "Feature", "properties": { "name": "Harappa", "civilisation": "Indus Valley", "period": "Bronze Age", "region": "South Asia", "summary": "Major Indus Valley city site in Punjab.", "quest": "Compare city planning with Mohenjo-daro." }, "geometry": { "type": "Point", "coordinates": [72.865, 30.629] } },
+    { "type": "Feature", "properties": { "name": "Lothal", "civilisation": "Indus Valley", "period": "Bronze Age", "region": "South Asia", "summary": "Indus Valley site associated with trade and dock-like structures.", "quest": "Explore maritime trade as part of Bronze Age urbanism." }, "geometry": { "type": "Point", "coordinates": [72.249, 22.522] } },
+    { "type": "Feature", "properties": { "name": "Sanchi", "civilisation": "Mauryan and Buddhist", "period": "3rd century BCE onward", "region": "India", "summary": "Buddhist stupa complex in India.", "quest": "Read symbols, gateways and pilgrimage routes." }, "geometry": { "type": "Point", "coordinates": [77.739, 23.48] } },
+    { "type": "Feature", "properties": { "name": "Ajanta Caves", "civilisation": "Indian Buddhist", "period": "2nd century BCE to 6th century CE", "region": "India", "summary": "Rock-cut Buddhist caves with paintings and sculpture.", "quest": "Compare narrative art with architecture." }, "geometry": { "type": "Point", "coordinates": [75.703, 20.552] } },
+    { "type": "Feature", "properties": { "name": "Ellora Caves", "civilisation": "Indian Buddhist, Hindu and Jain", "period": "6th to 10th century", "region": "India", "summary": "Rock-cut caves representing multiple religious traditions.", "quest": "Study coexistence through spatial design." }, "geometry": { "type": "Point", "coordinates": [75.179, 20.026] } },
+    { "type": "Feature", "properties": { "name": "Anuradhapura", "civilisation": "Ancient Sri Lankan", "period": "Ancient to medieval", "region": "Sri Lanka", "summary": "Ancient capital with major Buddhist monuments.", "quest": "Compare reservoirs, monasteries and city planning." }, "geometry": { "type": "Point", "coordinates": [80.403, 8.312] } },
+    { "type": "Feature", "properties": { "name": "Sigiriya", "civilisation": "Ancient Sri Lankan", "period": "5th century CE", "region": "Sri Lanka", "summary": "Rock fortress and palace landscape.", "quest": "Ask how geography can become architecture." }, "geometry": { "type": "Point", "coordinates": [80.761, 7.957] } }
+  ]
+}
