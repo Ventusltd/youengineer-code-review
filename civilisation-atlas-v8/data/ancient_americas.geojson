@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "name": "Ancient Americas",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Chichen Itza", "civilisation": "Maya", "period": "Classic to Postclassic", "region": "Mesoamerica", "summary": "Major Maya site in Yucatan.", "quest": "Compare astronomy, ritual and political theatre." }, "geometry": { "type": "Point", "coordinates": [-88.568, 20.684] } },
+    { "type": "Feature", "properties": { "name": "Teotihuacan", "civilisation": "Teotihuacan", "period": "1st millennium CE", "region": "Mesoamerica", "summary": "Vast planned city near modern Mexico City.", "quest": "Study urban axes and monumental scale." }, "geometry": { "type": "Point", "coordinates": [-98.839, 19.692] } },
+    { "type": "Feature", "properties": { "name": "Tikal", "civilisation": "Maya", "period": "Classic Maya", "region": "Mesoamerica", "summary": "Major Maya city in Guatemala.", "quest": "Ask how forest, astronomy and kingship interact." }, "geometry": { "type": "Point", "coordinates": [-89.623, 17.222] } },
+    { "type": "Feature", "properties": { "name": "Palenque", "civilisation": "Maya", "period": "Classic Maya", "region": "Mesoamerica", "summary": "Maya city famous for architecture and inscriptions.", "quest": "Use writing to connect rulers, buildings and dates." }, "geometry": { "type": "Point", "coordinates": [-92.045, 17.484] } },
+    { "type": "Feature", "properties": { "name": "Monte Alban", "civilisation": "Zapotec", "period": "Preclassic to Classic", "region": "Mesoamerica", "summary": "Hilltop Zapotec city in Oaxaca.", "quest": "Ask why capitals are placed on high ground." }, "geometry": { "type": "Point", "coordinates": [-96.767, 17.044] } },
+    { "type": "Feature", "properties": { "name": "Machu Picchu", "civilisation": "Inca", "period": "15th century", "region": "Andes", "summary": "Inca mountain site in Peru.", "quest": "Ask how terrain, water and ritual shape architecture." }, "geometry": { "type": "Point", "coordinates": [-72.545, -13.163] } },
+    { "type": "Feature", "properties": { "name": "Nazca Lines", "civilisation": "Nazca", "period": "1st millennium CE", "region": "Andes", "summary": "Large geoglyphs in the desert of southern Peru.", "quest": "Discuss scale, visibility and interpretation." }, "geometry": { "type": "Point", "coordinates": [-75.133, -14.739] } },
+    { "type": "Feature", "properties": { "name": "Cahokia", "civilisation": "Mississippian", "period": "11th to 14th century", "region": "North America", "summary": "Major pre-Columbian mound city near the Mississippi.", "quest": "Compare earthworks with stone monuments." }, "geometry": { "type": "Point", "coordinates": [-90.062, 38.655] } }
+  ]
+}
