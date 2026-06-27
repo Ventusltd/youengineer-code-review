@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medusa's Time Temple</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="temple-shell">
+    <section class="hero">
+      <p class="eyebrow">YouEngineer Mini Project 01</p>
+      <h1>Medusa's Time Temple</h1>
+      <p class="subtitle">
+        A classical civilisation inspired calendar and clock for learning HTML, CSS and JavaScript.
+      </p>
+      <p class="frieze">ΑΘΗΝΑ · ΧΡΟΝΟΣ · ΜΕΔΟΥΣΑ · ΣΟΦΙΑ</p>
+    </section>
+
+    <section class="dashboard" aria-label="Medusa calendar and clock dashboard">
+      <article class="panel medusa-panel">
+        <div class="medusa-art" aria-hidden="true">
+          <span class="snake snake-one">∿</span>
+          <span class="snake snake-two">∿</span>
+          <span class="snake snake-three">∿</span>
+          <span class="snake snake-four">∿</span>
+          <div class="face">
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+
+        <h2>Gorgon Clock</h2>
+        <p class="myth-note" id="mythNote">The temple is waking up...</p>
+
+        <div class="clock" aria-label="Analogue clock">
+          <div class="clock-ring"></div>
+          <div class="hand hour-hand" id="hourHand"></div>
+          <div class="hand minute-hand" id="minuteHand"></div>
+          <div class="hand second-hand" id="secondHand"></div>
+          <div class="clock-centre"></div>
+          <span class="clock-number twelve">XII</span>
+          <span class="clock-number three">III</span>
+          <span class="clock-number six">VI</span>
+          <span class="clock-number nine">IX</span>
+        </div>
+
+        <p class="digital-time" id="digitalTime">--:--:--</p>
+        <p class="digital-date" id="digitalDate">Loading date...</p>
+      </article>
+
+      <article class="panel calendar-panel">
+        <div class="calendar-header">
+          <button type="button" id="previousMonth" aria-label="Previous month">←</button>
+          <h2 id="monthTitle">Month</h2>
+          <button type="button" id="nextMonth" aria-label="Next month">→</button>
+        </div>
+
+        <div class="calendar-grid weekday-row" aria-hidden="true">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+
+        <div class="calendar-grid days-grid" id="calendarDays" aria-label="Calendar days"></div>
+
+        <button type="button" class="today-button" id="todayButton">Return to Today</button>
+
+        <section class="quest-box" aria-label="Learning quests">
+          <h3>Anjali's Learning Quests</h3>
+          <ul>
+            <li>Find the JavaScript function that builds the calendar.</li>
+            <li>Change one colour in <code>styles.css</code>.</li>
+            <li>Add one new myth note in <code>script.js</code>.</li>
+            <li>Commit the change with a clear message.</li>
+          </ul>
+        </section>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
