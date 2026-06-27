@@ -15,12 +15,24 @@ function polishViewLabel() {
 function polishSatelliteButton() {
     const button = document.getElementById("btn-satellite");
     if (!button) return;
-    setTextIfChanged(button, button.classList.contains("active") ? "DARK MAP VIEW" : "SATELLITE VIEW");
+    const target = button.classList.contains("active") ? "DARK MAP VIEW" : "SATELLITE VIEW";
+    setTextIfChanged(button, target);
+}
+
+function polishLayerStatuses() {
+    document.querySelectorAll("input[data-layer-toggle]").forEach((input) => {
+        if (!input.checked) {
+            document.querySelectorAll(`[data-status="${input.dataset.layerToggle}"]`).forEach((status) => {
+                status.textContent = "OFF";
+            });
+        }
+    });
 }
 
 function startAtlasPolish() {
     polishViewLabel();
     polishSatelliteButton();
+    polishLayerStatuses();
 
     const label = document.getElementById("days");
     if (label) {
@@ -35,6 +47,21 @@ function startAtlasPolish() {
         });
         button.addEventListener("click", () => setTimeout(polishSatelliteButton, 0));
     }
+
+    document.addEventListener("change", (event) => {
+        if (event.target && event.target.matches("input[data-layer-toggle]")) {
+            setTimeout(polishLayerStatuses, 0);
+        }
+    });
+
+    const clearButton = document.getElementById("btn-clear");
+    if (clearButton) {
+        clearButton.addEventListener("click", () => setTimeout(polishLayerStatuses, 0));
+    }
 }
 
-window.addEventListener("load", startAtlasPolish);
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startAtlasPolish);
+} else {
+    startAtlasPolish();
+}
