@@ -1,3 +1,32 @@
+.key-dot {
+    width: 15px;
+    height: 15px;
+}
+
+.key-item {
+    min-height: 38px;
+    font-size: 15px;
+    gap: 11px;
+}
+
+.key-status {
+    font-size: 10px;
+}
+
+.scada-keys input[type="checkbox"],
+.scada-keys input[type="radio"],
+#fs-curtain input[type="checkbox"],
+#fs-curtain input[type="radio"] {
+    transform: scale(1.65);
+    margin-right: 8px;
+}
+
+.map-toggle-btn,
+.map-ctrl-btn,
+.search-btn {
+    min-height: 38px;
+}
+
 @media (max-width: 720px) {
     .search-bar-wrapper {
         top: 86px;
@@ -10,5 +39,22 @@
 
     .hud-val {
         font-size: 14px;
+    }
+
+    .key-dot {
+        width: 18px;
+        height: 18px;
+    }
+
+    .key-item {
+        min-height: 46px;
+        font-size: 17px;
+    }
+
+    .scada-keys input[type="checkbox"],
+    .scada-keys input[type="radio"],
+    #fs-curtain input[type="checkbox"],
+    #fs-curtain input[type="radio"] {
+        transform: scale(1.9);
     }
 }
