@@ -35,6 +35,62 @@ function polishLayerStatuses() {
     });
 }
 
+function getPopupField(content, fieldName) {
+    const wanted = fieldName.toLowerCase();
+    for (const row of content.querySelectorAll(".popup-row")) {
+        const key = row.querySelector("span:first-child")?.textContent?.replace(":", "").trim().toLowerCase();
+        const value = row.querySelector(".popup-val")?.textContent?.trim();
+        if (key === wanted && value) return value;
+    }
+    return "";
+}
+
+function buildKnowledgeQuery(content) {
+    const name = getPopupField(content, "Name");
+    const civilisation = getPopupField(content, "Civilisation");
+    const region = getPopupField(content, "Region");
+    return [name, civilisation, region, "history archaeology"]
+        .filter(Boolean)
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function addKnowledgeButtonsToPopup(content) {
+    if (!content || content.querySelector(".popup-search-btns")) return;
+
+    const query = buildKnowledgeQuery(content);
+    if (!query) return;
+
+    const encoded = encodeURIComponent(query);
+    const wikiQuery = encodeURIComponent(getPopupField(content, "Name") || query);
+
+    const row = document.createElement("div");
+    row.className = "popup-search-btns";
+
+    const links = [
+        { label: "News", className: "popup-btn-news", href: `https://news.google.com/search?q=${encoded}` },
+        { label: "Wiki", className: "popup-btn-wiki", href: `https://en.wikipedia.org/w/index.php?search=${wikiQuery}` },
+        { label: "Images", className: "popup-btn-images", href: `https://www.google.com/search?tbm=isch&q=${encoded}` }
+    ];
+
+    links.forEach((link) => {
+        const anchor = document.createElement("a");
+        anchor.className = `popup-btn ${link.className}`;
+        anchor.href = link.href;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+        anchor.textContent = link.label;
+        row.appendChild(anchor);
+    });
+
+    content.appendChild(row);
+}
+
+function polishPopups() {
+    document.querySelectorAll(".maplibregl-popup-content").forEach(addKnowledgeButtonsToPopup);
+}
+
 function addBasemapControls(containerId) {
     const container = document.getElementById(containerId);
     if (!container || container.querySelector(".basemap-group")) return;
@@ -93,6 +149,7 @@ function startAtlasPolish() {
     addBasemapControls("scada-ui-container");
     addBasemapControls("fs-curtain-keys");
     syncBasemapRadios();
+    polishPopups();
 
     const label = document.getElementById("days");
     if (label) {
@@ -107,6 +164,8 @@ function startAtlasPolish() {
         });
         button.addEventListener("click", () => setTimeout(polishSatelliteButton, 0));
     }
+
+    new MutationObserver(polishPopups).observe(document.body, { childList: true, subtree: true });
 
     document.addEventListener("change", (event) => {
         if (event.target && event.target.matches("input[data-layer-toggle]")) {
