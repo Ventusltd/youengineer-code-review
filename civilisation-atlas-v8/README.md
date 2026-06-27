@@ -12,17 +12,22 @@ MapLibre map
 SCADA-style layer keys
 search box
 fullscreen mode
+satellite mode
 CSV export
 local GeoJSON layers
 ```
 
 ## What Was Removed
 
-The app imports no GlobalGrid2050 energy, grid, REPD, EV, transport, supermarket, cable or infrastructure datasets.
+The app imports no original atlas data layers.
 
 ## Layer Principle
 
 All layers are off by default. The first page load is a blank global base map. Visitors then choose which classical civilisation layers to switch on.
+
+## Satellite Mode
+
+The Satellite button switches on imagery so visitors can inspect the real-world location behind the local GeoJSON markers.
 
 ## Local Layer Groups
 
