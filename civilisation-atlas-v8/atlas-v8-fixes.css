@@ -1,0 +1,14 @@
+@media (max-width: 720px) {
+    .search-bar-wrapper {
+        top: 86px;
+        right: 8px;
+    }
+
+    .custom-map-attrib {
+        max-width: calc(100% - 92px);
+    }
+
+    .hud-val {
+        font-size: 14px;
+    }
+}
