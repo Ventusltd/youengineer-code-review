@@ -24,58 +24,46 @@ myths.css
 .nojekyll
 ```
 
-The project uses plain HTML, CSS and JavaScript with no external libraries.
+## Mini Project 02: Civilisation Atlas V8
 
-## Greek Mythology Library
-
-The page includes 71 curated Greek mythology entries. The reader supports:
+This repo now contains a V8-style MapLibre atlas shell based on the GlobalGrid atlas format:
 
 ```text
-Keyword search
-Theme filtering
-Figure and story selection
-Random myth selection
-Short story summaries
-Learning prompts
+civilisation-atlas-v8/index.html
+civilisation-atlas-v8/ventusv8.css
+civilisation-atlas-v8/ventus-corev8engine.js
+civilisation-atlas-v8/data/*.geojson
+civilisation-atlas-v8/README.md
 ```
 
-The mythology content is stored locally in `myths.js`.
+The V8 atlas starts with zero visible layers. Visitors switch on local classical civilisation GeoJSON layers from the SCADA-style layer keys.
 
-## Mini Project 02: Civilisation Atlas
+The app imports none of the original GlobalGrid data layers.
 
-This repo also contains a static GIS-style world map for classical civilisation and heritage learning:
+Current layer groups:
 
 ```text
-civilisation-atlas/index.html
-civilisation-atlas/atlas.css
-civilisation-atlas/atlas-data.js
-civilisation-atlas/atlas-state.js
-civilisation-atlas/atlas-helpers.js
-civilisation-atlas/atlas-map.js
-civilisation-atlas/atlas-ui.js
-civilisation-atlas/README.md
+Classical Civilisations
+Heritage Starter Layers
+Mythic Geography and Routes
 ```
-
-The atlas uses local GeoJSON-style feature data and a custom SVG map renderer. It does not use external map APIs or imported energy data.
 
 The map supports:
 
 ```text
+MapLibre basemap
 Layer toggles
-Keyword search
-Civilisation filter
-Region filter
-UNESCO-tagged starter sites
-Random site selection
-Learning prompts
-Ancient route overlays
+Keyword search over visible loaded layers
+CSV export of visible loaded features
+Fullscreen mode
+Reset view
+Clear layers
+Local GeoJSON datasets
 ```
-
-The structure separates data, state, helpers, map rendering and UI wiring into different files.
 
 ## How to Run Locally
 
-Download or clone the repo, then open `index.html` or `civilisation-atlas/index.html` in a browser.
+Download or clone the repo, then open `index.html` or `civilisation-atlas-v8/index.html` in a browser.
 
 ## How to Publish with GitHub Pages
 
