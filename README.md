@@ -43,34 +43,39 @@ The mythology content is stored locally in `myths.js`.
 
 ## Mini Project 02: Civilisation Atlas
 
-This repo also contains a static GIS-style world map for classic civilisation and heritage learning:
+This repo also contains a static GIS-style world map for classical civilisation and heritage learning:
 
 ```text
-civilisation-map.html
-civilisation-map.css
-civilisation-map.js
-civilisation-map-data.js
+civilisation-atlas/index.html
+civilisation-atlas/atlas.css
+civilisation-atlas/atlas-data.js
+civilisation-atlas/atlas-state.js
+civilisation-atlas/atlas-helpers.js
+civilisation-atlas/atlas-map.js
+civilisation-atlas/atlas-ui.js
+civilisation-atlas/README.md
 ```
 
-The atlas uses local GeoJSON-style feature data and a custom SVG map renderer. It does not use an external map API or imported energy data.
+The atlas uses local GeoJSON-style feature data and a custom SVG map renderer. It does not use external map APIs or imported energy data.
 
 The map supports:
 
 ```text
 Layer toggles
 Keyword search
-UNESCO starter-site filter
+Civilisation filter
+Region filter
+UNESCO-tagged starter sites
 Random site selection
-Region zoom buttons
-Student prompts
-Nearest visible neighbour distance
+Learning prompts
+Ancient route overlays
 ```
 
-The structure follows a config-driven pattern: data and layer definitions sit in `civilisation-map-data.js`, while map rendering and interaction logic sit in `civilisation-map.js`.
+The structure separates data, state, helpers, map rendering and UI wiring into different files.
 
 ## How to Run Locally
 
-Download or clone the repo, then open `index.html` or `civilisation-map.html` in a browser.
+Download or clone the repo, then open `index.html` or `civilisation-atlas/index.html` in a browser.
 
 ## How to Publish with GitHub Pages
 
