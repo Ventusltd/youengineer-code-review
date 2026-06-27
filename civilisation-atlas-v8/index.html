@@ -21,17 +21,17 @@
     </div>
     <div class="map-container" id="map-container">
         <div id="map"></div>
-        <div class="custom-map-attrib">Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | © CARTO | Local civilisation GeoJSON only</div>
+        <div class="custom-map-attrib">Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | © CARTO | Satellite © Esri | Local civilisation GeoJSON only</div>
         <button id="btn-fullscreen" onclick="enterFullscreen()" title="Fullscreen">⛶</button>
         <div class="search-bar-wrapper"><div style="position:relative"><input class="search-input" id="search-input" type="text" placeholder="Search site name..." autocomplete="off" /><div class="search-results" id="search-results"></div></div><button class="search-btn" id="search-btn">GO</button></div>
-        <div class="map-controls"><button class="map-ctrl-btn" id="btn-export">⬇ Export CSV</button><button class="map-ctrl-btn" id="btn-clear">✕ Clear Layers</button><button class="map-ctrl-btn" id="btn-reset">◎ Reset View</button></div>
+        <div class="map-controls"><button class="map-ctrl-btn" id="btn-satellite">◩ Satellite</button><button class="map-ctrl-btn" id="btn-export">⬇ Export CSV</button><button class="map-ctrl-btn" id="btn-clear">✕ Clear Layers</button><button class="map-ctrl-btn" id="btn-reset">◎ Reset View</button></div>
         <div class="podcast-shoutout">Civilisation Atlas V8<br>Static GeoJSON learning layers</div>
     </div>
     <div class="scada-wrapper">
         <div class="scada-brand"><div><div class="scada-brand-main">Ventus</div><div class="scada-brand-sub">Cables &amp; Connectivity&reg;</div></div><div class="scada-brand-tag">youengineer-code-review | classics map shell</div></div>
         <div class="status-legend"><div class="status-dot"><span style="background:#ffae00"></span>Classical civilisation</div><div class="status-dot"><span style="background:#00ffff"></span>UNESCO starter</div><div class="status-dot"><span style="background:#ff00ff"></span>Mythic geography</div><div class="status-dot"><span style="background:#66ff66"></span>Ancient routes</div></div>
         <div class="scada-keys" id="scada-ui-container"></div>
-        <div class="disclaimer-box">Clean V8 atlas shell. Original atlas datasets are not imported. Current layers are local starter GeoJSON files for classical civilisation learning.</div>
+        <div class="disclaimer-box">Clean V8 atlas shell. Original atlas datasets are not imported. Current layers are local starter GeoJSON files for classical civilisation learning. Satellite mode is optional and uses a public imagery tile layer.</div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
