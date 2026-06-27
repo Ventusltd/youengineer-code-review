@@ -1,6 +1,6 @@
 # YouEngineer Code Review
 
-A public showcase and code review repository for practising professional code review, GitHub workflow, documentation, and engineering discipline.
+A code review repository for practising GitHub workflow, documentation, HTML, CSS and JavaScript.
 
 ## Task List
 
@@ -12,16 +12,34 @@ A public showcase and code review repository for practising professional code re
 
 ## Mini Project 01: Medusa's Time Temple
 
-This repo now contains a small classical civilisation inspired calendar and clock:
+This repo contains a classical civilisation inspired calendar, clock and mythology reader:
 
 ```text
 index.html
 styles.css
 script.js
+myths.js
+myth-reader.js
+myths.css
 .nojekyll
 ```
 
-The project is deliberately simple. It uses plain HTML, CSS and JavaScript with no external libraries.
+The project uses plain HTML, CSS and JavaScript with no external libraries.
+
+## Greek Mythology Library
+
+The page includes 71 curated Greek mythology entries. The reader supports:
+
+```text
+Keyword search
+Theme filtering
+Figure and story selection
+Random myth selection
+Short story summaries
+Learning prompts
+```
+
+The mythology content is stored locally in `myths.js`.
 
 ## How to Run Locally
 
