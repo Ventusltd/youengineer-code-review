@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "name": "East and Southeast Asia",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Terracotta Army", "civilisation": "Qin Chinese", "period": "3rd century BCE", "region": "China", "summary": "Funerary army associated with the first Qin emperor.", "quest": "Discuss scale, standardisation and imperial afterlife." }, "geometry": { "type": "Point", "coordinates": [109.278, 34.385] } },
+    { "type": "Feature", "properties": { "name": "Great Wall at Badaling", "civilisation": "Chinese", "period": "Ming and earlier", "region": "China", "summary": "Famous section of the Great Wall of China.", "quest": "Ask how borders become architecture." }, "geometry": { "type": "Point", "coordinates": [116.016, 40.356] } },
+    { "type": "Feature", "properties": { "name": "Mogao Caves", "civilisation": "Silk Road Buddhist", "period": "4th to 14th century", "region": "China", "summary": "Buddhist cave complex near Dunhuang.", "quest": "Trace art, trade and religion along desert routes." }, "geometry": { "type": "Point", "coordinates": [94.81, 40.037] } },
+    { "type": "Feature", "properties": { "name": "Historic Nara", "civilisation": "Japanese", "period": "8th century", "region": "Japan", "summary": "Historic monuments of ancient Nara.", "quest": "Compare capital planning and temple landscapes." }, "geometry": { "type": "Point", "coordinates": [135.839, 34.689] } },
+    { "type": "Feature", "properties": { "name": "Gyeongju", "civilisation": "Silla Korean", "period": "1st millennium CE", "region": "Korea", "summary": "Historic capital landscape of the Silla kingdom.", "quest": "Study tombs, temples and dynastic memory." }, "geometry": { "type": "Point", "coordinates": [129.214, 35.835] } },
+    { "type": "Feature", "properties": { "name": "Angkor Wat", "civilisation": "Khmer", "period": "12th century", "region": "Cambodia", "summary": "Monumental temple complex in Cambodia.", "quest": "Study water, kingship and cosmic architecture." }, "geometry": { "type": "Point", "coordinates": [103.867, 13.412] } },
+    { "type": "Feature", "properties": { "name": "Borobudur", "civilisation": "Javanese Buddhist", "period": "8th to 9th century", "region": "Indonesia", "summary": "Vast Buddhist monument in Java.", "quest": "Walk the monument as a diagram of spiritual ascent." }, "geometry": { "type": "Point", "coordinates": [110.203, -7.607] } },
+    { "type": "Feature", "properties": { "name": "Bagan", "civilisation": "Burmese", "period": "9th to 13th century", "region": "Myanmar", "summary": "Landscape of temples and stupas.", "quest": "Use monument density to think about devotion and state power." }, "geometry": { "type": "Point", "coordinates": [94.867, 21.171] } }
+  ]
+}
