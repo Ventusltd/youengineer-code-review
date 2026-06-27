@@ -1,30 +1,30 @@
 .key-dot {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
 }
 
 .key-item {
-    min-height: 38px;
-    font-size: 15px;
-    gap: 11px;
+    min-height: 30px;
+    font-size: 13px;
+    gap: 8px;
 }
 
 .key-status {
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .scada-keys input[type="checkbox"],
 .scada-keys input[type="radio"],
 #fs-curtain input[type="checkbox"],
 #fs-curtain input[type="radio"] {
-    transform: scale(1.65);
-    margin-right: 8px;
+    transform: scale(1.25);
+    margin-right: 4px;
 }
 
 .map-toggle-btn,
 .map-ctrl-btn,
 .search-btn {
-    min-height: 38px;
+    min-height: 34px;
 }
 
 body.fs-active .map-mode-controls {
@@ -114,20 +114,20 @@ body.fs-active .custom-map-attrib {
     }
 
     .key-dot {
-        width: 18px;
-        height: 18px;
+        width: 11px;
+        height: 11px;
     }
 
     .key-item {
-        min-height: 46px;
-        font-size: 17px;
+        min-height: 34px;
+        font-size: 14px;
     }
 
     .scada-keys input[type="checkbox"],
     .scada-keys input[type="radio"],
     #fs-curtain input[type="checkbox"],
     #fs-curtain input[type="radio"] {
-        transform: scale(1.9);
+        transform: scale(1.35);
     }
 
     .popup-btn {
