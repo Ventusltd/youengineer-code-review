@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "name": "Mesopotamia and Persia",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Babylon", "civilisation": "Mesopotamian", "period": "2nd to 1st millennium BCE", "region": "Iraq", "summary": "Major Mesopotamian city in present-day Iraq.", "quest": "Track how a city becomes a symbol in later cultures." }, "geometry": { "type": "Point", "coordinates": [44.42, 32.536] } },
+    { "type": "Feature", "properties": { "name": "Ziggurat of Ur", "civilisation": "Sumerian", "period": "Bronze Age", "region": "Iraq", "summary": "Monumental ziggurat associated with the city of Ur.", "quest": "Compare stepped sacred architecture with pyramids." }, "geometry": { "type": "Point", "coordinates": [46.103, 30.963] } },
+    { "type": "Feature", "properties": { "name": "Nineveh", "civilisation": "Assyrian", "period": "Neo-Assyrian", "region": "Iraq", "summary": "Major Assyrian capital near modern Mosul.", "quest": "Ask how walls, palaces and libraries express state power." }, "geometry": { "type": "Point", "coordinates": [43.155, 36.36] } },
+    { "type": "Feature", "properties": { "name": "Persepolis", "civilisation": "Achaemenid Persian", "period": "6th to 4th century BCE", "region": "Iran", "summary": "Ceremonial capital of the Achaemenid Empire.", "quest": "Read empire through stairways, reliefs and tribute scenes." }, "geometry": { "type": "Point", "coordinates": [52.891, 29.935] } },
+    { "type": "Feature", "properties": { "name": "Pasargadae", "civilisation": "Achaemenid Persian", "period": "6th century BCE", "region": "Iran", "summary": "Early Achaemenid capital associated with Cyrus the Great.", "quest": "Compare founding capitals with later imperial display." }, "geometry": { "type": "Point", "coordinates": [53.167, 30.193] } },
+    { "type": "Feature", "properties": { "name": "Hattusa", "civilisation": "Hittite", "period": "Bronze Age", "region": "Anatolia", "summary": "Capital of the Hittite empire in central Anatolia.", "quest": "Study fortifications, archives and imperial diplomacy." }, "geometry": { "type": "Point", "coordinates": [34.617, 40.021] } },
+    { "type": "Feature", "properties": { "name": "Petra", "civilisation": "Nabataean", "period": "Classical", "region": "Jordan", "summary": "Rock-cut city and caravan hub in Jordan.", "quest": "Study water engineering and trade geography." }, "geometry": { "type": "Point", "coordinates": [35.444, 30.328] } }
+  ]
+}
