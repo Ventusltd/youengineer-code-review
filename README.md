@@ -6,7 +6,7 @@ A code review repository for practising GitHub workflow, documentation, HTML, CS
 
 1. Connect ChatGPT to GitHub successfully.
 2. Create the first YouEngineer repositories manually.
-3. Open the first mini project and inspect the HTML, CSS and JavaScript.
+3. Open the mini projects and inspect the HTML, CSS and JavaScript.
 4. Make one small visual change and commit it with a clear message.
 5. Ask for a code review before making the next change.
 
@@ -41,9 +41,36 @@ Learning prompts
 
 The mythology content is stored locally in `myths.js`.
 
+## Mini Project 02: Civilisation Atlas
+
+This repo also contains a static GIS-style world map for classic civilisation and heritage learning:
+
+```text
+civilisation-map.html
+civilisation-map.css
+civilisation-map.js
+civilisation-map-data.js
+```
+
+The atlas uses local GeoJSON-style feature data and a custom SVG map renderer. It does not use an external map API or imported energy data.
+
+The map supports:
+
+```text
+Layer toggles
+Keyword search
+UNESCO starter-site filter
+Random site selection
+Region zoom buttons
+Student prompts
+Nearest visible neighbour distance
+```
+
+The structure follows a config-driven pattern: data and layer definitions sit in `civilisation-map-data.js`, while map rendering and interaction logic sit in `civilisation-map.js`.
+
 ## How to Run Locally
 
-Download or clone the repo, then open `index.html` in a browser.
+Download or clone the repo, then open `index.html` or `civilisation-map.html` in a browser.
 
 ## How to Publish with GitHub Pages
 
