@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>World Cup Knockout Predictor</title>
-  <link rel="stylesheet" href="styles.css?v=20260628-static-lines-1" />
-  <script src="script-grid.js?v=20260628-static-lines-1" defer></script>
+  <title>Knockout Predictor</title>
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <script src="script-grid.js?v=2" defer></script>
 </head>
 <body>
   <main class="app-shell">
@@ -19,7 +19,6 @@
         <button id="fullscreenButton" type="button">Fullscreen</button>
       </div>
     </header>
-
     <nav class="round-nav" aria-label="Round navigation">
       <button data-round="round-32" type="button">Round of 32</button>
       <button data-round="round-16" type="button">Round of 16</button>
@@ -27,25 +26,12 @@
       <button data-round="semi-finals" type="button">Semi-finals</button>
       <button data-round="final" type="button">Final</button>
     </nav>
-
     <section class="scoreboard" aria-live="polite">
-      <div>
-        <span class="label">Predicted champion</span>
-        <strong id="championName">TBD</strong>
-      </div>
-      <div>
-        <span class="label">Selections</span>
-        <strong id="selectionCount">0 / 31</strong>
-      </div>
+      <div><span class="label">Predicted champion</span><strong id="championName">TBD</strong></div>
+      <div><span class="label">Selections</span><strong id="selectionCount">0 / 31</strong></div>
     </section>
-
-    <section class="bracket-wrap" aria-label="Knockout bracket">
-      <div id="bracket" class="bracket"></div>
-    </section>
-
-    <footer class="note">
-      Starter bracket data uses the current Round of 32 structure as an editable predictor snapshot. It is not a live FIFA feed. Update script-grid.js when new official results are required.
-    </footer>
+    <section class="bracket-wrap" aria-label="Knockout bracket"><div id="bracket" class="bracket"></div></section>
+    <footer class="note">Current Round of 32 predictor snapshot. Not a live feed.</footer>
   </main>
 </body>
 </html>
