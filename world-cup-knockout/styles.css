@@ -9,6 +9,12 @@
   --accent-2: #00e5ff;
   --gold: #ffcc66;
   --danger: #ff6666;
+  --card-w: 218px;
+  --card-h: 128px;
+  --round-gap: 14px;
+  --col-gap: 62px;
+  --bracket-pad: 12px;
+  --title-offset: 38px;
 }
 
 * { box-sizing: border-box; }
@@ -144,65 +150,58 @@ h1 {
 }
 
 .bracket {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(214px, 238px));
-  align-items: start;
-  gap: 16px;
-  min-width: 1160px;
+  position: relative;
+  min-width: 100%;
   min-height: 100%;
-  padding: 12px;
 }
 
-.round-column {
-  display: grid;
-  align-content: start;
-  gap: var(--round-gap, 8px);
+.connector-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.round-column:nth-child(2) { padding-top: 38px; --round-gap: 34px; }
-.round-column:nth-child(3) { padding-top: 102px; --round-gap: 96px; }
-.round-column:nth-child(4) { padding-top: 222px; --round-gap: 214px; }
-.round-column:nth-child(5) { padding-top: 346px; }
+.connector-path {
+  fill: none;
+  stroke: rgba(184,204,255,0.33);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .round-title {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  margin: 0 0 4px;
-  padding: 6px 3px;
+  position: absolute;
+  z-index: 3;
+  width: var(--card-w);
+  margin: 0;
+  padding: 5px 3px;
   color: var(--accent);
-  background: linear-gradient(#0d0f14 70%, rgba(13,15,20,0));
+  background: linear-gradient(90deg, rgba(13,15,20,0.96), rgba(13,15,20,0.62));
   font-size: 0.78rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .match-card {
-  position: relative;
+  position: absolute;
+  z-index: 2;
+  width: var(--card-w);
+  height: var(--card-h);
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 13px;
-  background: rgba(36, 40, 50, 0.92);
+  background: rgba(36, 40, 50, 0.94);
   box-shadow: 0 10px 20px rgba(0,0,0,0.24);
   padding: 7px;
 }
-
-.match-card::after {
-  content: "";
-  position: absolute;
-  right: -17px;
-  top: 50%;
-  width: 16px;
-  border-top: 2px solid rgba(184,204,255,0.28);
-}
-
-.round-column:last-child .match-card::after { display: none; }
 
 .match-meta {
   display: flex;
   justify-content: space-between;
   gap: 6px;
   color: var(--muted);
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 800;
   margin-bottom: 4px;
 }
@@ -213,14 +212,14 @@ h1 {
   align-items: center;
   gap: 7px;
   width: 100%;
-  min-height: 34px;
+  min-height: 32px;
   border: 1px solid transparent;
   border-radius: 10px;
   background: transparent;
   color: var(--text);
   text-align: left;
   cursor: pointer;
-  padding: 5px;
+  padding: 4px 5px;
   transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
 }
 
@@ -251,15 +250,15 @@ h1 {
 .flag {
   display: grid;
   place-items: center;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   border-radius: 7px;
   background: #111318;
   font-size: 1rem;
 }
 
 .team-name {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -275,17 +274,17 @@ h1 {
 .team-tools {
   display: flex;
   gap: 4px;
-  margin: 3px 0 0 33px;
+  margin: 2px 0 0 33px;
 }
 
 .team-tools a {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.56rem;
+  font-size: 0.52rem;
   font-weight: 900;
-  letter-spacing: 0.06em;
-  padding: 2px 6px;
+  letter-spacing: 0.05em;
+  padding: 1px 6px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -331,6 +330,15 @@ body.focus-mode .round-nav { padding-bottom: 0; }
 body.focus-mode .bracket-wrap { border-radius: 12px; }
 
 @media (max-width: 720px) {
+  :root {
+    --card-w: 206px;
+    --card-h: 124px;
+    --round-gap: 12px;
+    --col-gap: 52px;
+    --bracket-pad: 10px;
+    --title-offset: 34px;
+  }
+
   .app-shell {
     padding-left: 7px;
     padding-right: 7px;
@@ -345,22 +353,9 @@ body.focus-mode .bracket-wrap { border-radius: 12px; }
   }
 
   .scoreboard { grid-template-columns: 1fr; }
-
-  .bracket {
-    grid-template-columns: repeat(5, minmax(198px, 214px));
-    min-width: 1065px;
-    gap: 14px;
-    padding: 10px;
-  }
-
-  .round-column:nth-child(2) { padding-top: 32px; --round-gap: 28px; }
-  .round-column:nth-child(3) { padding-top: 86px; --round-gap: 82px; }
-  .round-column:nth-child(4) { padding-top: 190px; --round-gap: 184px; }
-  .round-column:nth-child(5) { padding-top: 296px; }
-
-  .team-button { min-height: 32px; }
-  .team-name { font-size: 0.78rem; }
-  .match-meta { font-size: 0.6rem; }
+  .team-button { min-height: 31px; }
+  .team-name { font-size: 0.77rem; }
+  .match-meta { font-size: 0.58rem; }
 
   body.focus-mode .topbar { gap: 8px; }
   body.focus-mode .actions button { min-width: 62px; }
