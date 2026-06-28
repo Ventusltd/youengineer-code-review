@@ -24,9 +24,7 @@ body {
   overflow: hidden;
 }
 
-button {
-  font: inherit;
-}
+button { font: inherit; }
 
 .app-shell {
   display: grid;
@@ -96,9 +94,7 @@ h1 {
 }
 
 .round-nav::-webkit-scrollbar,
-.bracket-wrap::-webkit-scrollbar {
-  display: none;
-}
+.bracket-wrap::-webkit-scrollbar { display: none; }
 
 .round-nav button {
   white-space: nowrap;
@@ -143,9 +139,7 @@ h1 {
   scroll-behavior: smooth;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background:
-    radial-gradient(circle at top left, rgba(184,204,255,0.12), transparent 30%),
-    #0d0f14;
+  background: radial-gradient(circle at top left, rgba(184,204,255,0.12), transparent 30%), #0d0f14;
 }
 
 .bracket {
@@ -200,9 +194,7 @@ h1 {
   border-top: 2px solid rgba(184,204,255,0.28);
 }
 
-.round-column:last-child .match-card::after {
-  display: none;
-}
+.round-column:last-child .match-card::after { display: none; }
 
 .match-meta {
   display: flex;
@@ -247,6 +239,12 @@ h1 {
 .team-button.selected {
   background: rgba(0, 229, 255, 0.12);
   border-color: var(--accent-2);
+}
+
+.team-button.locked {
+  background: rgba(255, 204, 102, 0.12);
+  border-color: rgba(255, 204, 102, 0.55);
+  color: var(--text);
 }
 
 .flag {
@@ -299,9 +297,7 @@ h1 {
   background: linear-gradient(135deg, rgba(255,204,102,0.18), rgba(36,40,50,0.95));
 }
 
-.champion-card .team-button {
-  cursor: default;
-}
+.champion-card .team-button { cursor: default; }
 
 .note {
   color: var(--muted);
@@ -310,28 +306,51 @@ h1 {
   padding: 0 4px;
 }
 
+body.focus-mode .app-shell {
+  grid-template-rows: auto auto 1fr;
+  padding-top: calc(env(safe-area-inset-top) + 6px);
+  gap: 6px;
+}
+
+body.focus-mode .eyebrow,
+body.focus-mode .scoreboard,
+body.focus-mode .note {
+  display: none;
+}
+
+body.focus-mode .topbar {
+  padding: 8px 12px;
+  border-radius: 14px;
+}
+
+body.focus-mode h1 {
+  font-size: clamp(1rem, 4vw, 1.4rem);
+}
+
+body.focus-mode .round-nav {
+  padding-bottom: 0;
+}
+
+body.focus-mode .bracket-wrap {
+  border-radius: 14px;
+}
+
 @media (max-width: 720px) {
   .app-shell {
     padding-left: 8px;
     padding-right: 8px;
   }
 
-  .topbar {
-    padding: 12px;
-  }
+  .topbar { padding: 12px; }
 
-  .actions {
-    flex-direction: column;
-  }
+  .actions { flex-direction: column; }
 
   .actions button {
     padding: 8px 10px;
     font-size: 0.78rem;
   }
 
-  .scoreboard {
-    grid-template-columns: 1fr;
-  }
+  .scoreboard { grid-template-columns: 1fr; }
 
   .bracket {
     grid-template-columns: repeat(5, minmax(276px, 292px));
@@ -344,7 +363,13 @@ h1 {
   .round-column:nth-child(4) { padding-top: 256px; --round-gap: 320px; }
   .round-column:nth-child(5) { padding-top: 376px; }
 
-  .team-button {
-    min-height: 54px;
+  .team-button { min-height: 54px; }
+
+  body.focus-mode .topbar {
+    gap: 8px;
+  }
+
+  body.focus-mode .actions button {
+    min-width: 70px;
   }
 }
