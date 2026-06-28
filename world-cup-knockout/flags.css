@@ -1,0 +1,29 @@
+.england-flag {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.45);
+}
+
+.england-flag::before,
+.england-flag::after {
+  content: "";
+  position: absolute;
+  background: #cf142b;
+}
+
+.england-flag::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 28%;
+  transform: translateY(-50%);
+}
+
+.england-flag::after {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 28%;
+  transform: translateX(-50%);
+}
