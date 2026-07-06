@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>World Cup Knockout Predictor v5</title>
+  <link rel="stylesheet" href="styles.css?v=5" />
+  <script src="script-grid.js?v=5" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YouEngineer Football Lab · v5 test copy</p>
+        <h1>World Cup Knockout Predictor</h1>
+      </div>
+      <div class="actions">
+        <button id="resetButton" type="button">Reset picks</button>
+        <button id="fullscreenButton" type="button">Fullscreen</button>
+      </div>
+    </header>
+    <nav class="round-nav" aria-label="Round navigation">
+      <button data-round="round-32" type="button">Round of 32</button>
+      <button data-round="round-16" type="button">Round of 16</button>
+      <button data-round="quarter-finals" type="button">Quarter-finals</button>
+      <button data-round="semi-finals" type="button">Semi-finals</button>
+      <button data-round="final" type="button">Final</button>
+    </nav>
+    <section class="scoreboard" aria-live="polite">
+      <div><span class="label">Predicted champion</span><strong id="championName">TBD</strong></div>
+      <div><span class="label">Selections</span><strong id="selectionCount">0 / 31</strong></div>
+    </section>
+    <section class="bracket-wrap" aria-label="Knockout bracket"><div id="bracket" class="bracket"></div></section>
+    <footer class="note">v5 isolated test version. Existing live folder untouched. Committed score snapshot with scorers and event detail retained.</footer>
+  </main>
+</body>
+</html>
