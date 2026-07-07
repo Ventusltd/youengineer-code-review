@@ -10,12 +10,7 @@ const T = {
   arg:["Argentina","🇦🇷"], cpv:["Cape Verde","🇨🇻"], aus:["Australia","🇦🇺"], egy:["Egypt","🇪🇬"],
   sui:["Switzerland","🇨🇭"], dza:["Algeria","🇩🇿"], col:["Colombia","🇨🇴"], gha:["Ghana","🇬🇭"]
 };
-const sources = {
-  r32:"SB Nation + Reuters / AP / Guardian bundle",
-  r16a:"Reuters + Guardian",
-  r16b:"Reuters + NY Post",
-  committed:"Committed v5 snapshot"
-};
+const sources = {r32:"SB Nation + Reuters / AP / Guardian bundle", r16a:"Reuters + Guardian", r16b:"Reuters + NY Post", r16c:"Reuters + AP + Guardian", committed:"Committed v5 snapshot"};
 const rounds = [
   {id:"round-32", title:"Round of 32", count:16, dates:null},
   {id:"round-16", title:"Round of 16", count:8, dates:["Sat 4 Jul, 18:00","Sat 4 Jul, 22:00","Mon 6 Jul, 20:00","Tue 7 Jul, 01:00","Sun 5 Jul, 21:00","Mon 6 Jul, 01:00","Tue 7 Jul, 17:00","Tue 7 Jul, 21:00"]},
@@ -23,6 +18,7 @@ const rounds = [
   {id:"semi-finals", title:"Semi-finals", count:2, dates:["Tue 14 Jul, 20:00","Wed 15 Jul, 20:00"]},
   {id:"final", title:"Final", count:1, dates:["Sun 19 Jul, 20:00"]}
 ];
+function m(home,away,date,status,score,winner,events=[],note=null,source="r32",confidence=0.82){return {home,away,date,status,score,winner,events,note,source,confidence}}
 const baseMatches = [
   m("rsa","can","Sun 28 Jun, 20:00","FT",[0,1],"can",[{team:"can",player:"Stephen Eustáquio",minute:"90+2"}]),
   m("ned","mar","Tue 30 Jun, 02:00","FT",["1 (2p)","1 (3p)"],"mar",[{team:"ned",player:"Cody Gakpo",minute:"72"},{team:"mar",player:"Issa Diop",minute:"90+1"},{team:"mar",type:"shootout",player:"Ismael Saibari",minute:"pens",detail:"decisive penalty"}]),
@@ -46,8 +42,8 @@ const officialRounds = {
   "round-16": [
     m("can","mar","Sat 4 Jul, 18:00","FT",[0,3],"mar",[{team:"mar",player:"Azzedine Ounahi"},{team:"mar",player:"Azzedine Ounahi",minute:"82"},{team:"mar",player:"Soufiane Rahimi",minute:"90+",detail:"late third"}],null,"r16a",0.90),
     m("par","fra","Sat 4 Jul, 22:00","FT",[0,1],"fra",[{team:"fra",type:"penalty",player:"Kylian Mbappé",minute:"70",detail:"foul won by Désiré Doué"}],null,"r16a",0.96),
-    m("por","esp","Mon 6 Jul, 20:00","Predict"),
-    m("usa","bel","Tue 7 Jul, 01:00","Predict"),
+    m("por","esp","Mon 6 Jul, 20:00","FT",[0,1],"esp",[{team:"esp",player:"Mikel Merino",minute:"91",assist:"Ferran Torres"}],null,"r16a",0.96),
+    m("usa","bel","Tue 7 Jul, 01:00","FT",[1,4],"bel",[{team:"bel",player:"Charles De Ketelaere",minute:"9"},{team:"usa",player:"Malik Tillman",minute:"31",detail:"deflected free kick"},{team:"bel",player:"Charles De Ketelaere",detail:"second goal"},{team:"bel",player:"Hans Vanaken",minute:"57"},{team:"bel",player:"Romelu Lukaku",minute:"90+"}],null,"r16c",0.94),
     m("bra","nor","Sun 5 Jul, 21:00","FT",[1,2],"nor",[{team:"nor",player:"Erling Haaland",minute:"79",assist:"Andreas Schjelderup"},{team:"nor",player:"Erling Haaland",minute:"90",assist:"Andreas Schjelderup"},{team:"bra",type:"penalty",player:"Neymar",minute:"90+"}],null,"r16a",0.96),
     m("mex","eng","Mon 6 Jul, 01:00","FT",[2,3],"eng",[{team:"eng",player:"Jude Bellingham",minute:"36"},{team:"eng",player:"Jude Bellingham",minute:"38"},{team:"mex",player:"Julián Quiñones",minute:"42"},{team:"eng",type:"penalty",player:"Harry Kane",minute:"60"},{team:"mex",type:"penalty",player:"Raúl Jiménez",minute:"69"}],null,"r16b",0.94),
     m("arg","egy","Tue 7 Jul, 17:00","Predict"),
@@ -55,7 +51,6 @@ const officialRounds = {
   ]
 };
 let picks = load(), pos = [], focus = false;
-function m(home,away,date,status,score,winner,events=[],note=null,source="r32",confidence=0.82){return {home,away,date,status,score,winner,events,source,note,confidence}}
 function load(){try{return JSON.parse(localStorage.getItem(STORE))||{}}catch{return {}}}
 function save(){localStorage.setItem(STORE,JSON.stringify(picks))}
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
