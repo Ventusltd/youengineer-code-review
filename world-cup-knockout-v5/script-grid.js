@@ -10,7 +10,7 @@ const T = {
   arg:["Argentina","🇦🇷"], cpv:["Cape Verde","🇨🇻"], aus:["Australia","🇦🇺"], egy:["Egypt","🇪🇬"],
   sui:["Switzerland","🇨🇭"], dza:["Algeria","🇩🇿"], col:["Colombia","🇨🇴"], gha:["Ghana","🇬🇭"]
 };
-const sources = {r32:"SB Nation + Reuters / AP / Guardian bundle", r16a:"Reuters + Guardian", r16b:"Reuters + NY Post", r16c:"Reuters + AP + Guardian", committed:"Committed v5 snapshot"};
+const sources = {r32:"SB Nation + Reuters / AP / Guardian bundle", r16a:"Reuters + Guardian", r16b:"Reuters + NY Post", r16c:"Reuters + AP + Guardian", r16d:"Reuters", committed:"Committed v5 snapshot"};
 const rounds = [
   {id:"round-32", title:"Round of 32", count:16, dates:null},
   {id:"round-16", title:"Round of 16", count:8, dates:["Sat 4 Jul, 18:00","Sat 4 Jul, 22:00","Mon 6 Jul, 20:00","Tue 7 Jul, 01:00","Sun 5 Jul, 21:00","Mon 6 Jul, 01:00","Tue 7 Jul, 17:00","Tue 7 Jul, 21:00"]},
@@ -46,8 +46,8 @@ const officialRounds = {
     m("usa","bel","Tue 7 Jul, 01:00","FT",[1,4],"bel",[{team:"bel",player:"Charles De Ketelaere",minute:"9"},{team:"usa",player:"Malik Tillman",minute:"31",detail:"deflected free kick"},{team:"bel",player:"Charles De Ketelaere",detail:"second goal"},{team:"bel",player:"Hans Vanaken",minute:"57"},{team:"bel",player:"Romelu Lukaku",minute:"90+"}],null,"r16c",0.94),
     m("bra","nor","Sun 5 Jul, 21:00","FT",[1,2],"nor",[{team:"nor",player:"Erling Haaland",minute:"79",assist:"Andreas Schjelderup"},{team:"nor",player:"Erling Haaland",minute:"90",assist:"Andreas Schjelderup"},{team:"bra",type:"penalty",player:"Neymar",minute:"90+"}],null,"r16a",0.96),
     m("mex","eng","Mon 6 Jul, 01:00","FT",[2,3],"eng",[{team:"eng",player:"Jude Bellingham",minute:"36"},{team:"eng",player:"Jude Bellingham",minute:"38"},{team:"mex",player:"Julián Quiñones",minute:"42"},{team:"eng",type:"penalty",player:"Harry Kane",minute:"60"},{team:"mex",type:"penalty",player:"Raúl Jiménez",minute:"69"}],null,"r16b",0.94),
-    m("arg","egy","Tue 7 Jul, 17:00","Predict"),
-    m("sui","col","Tue 7 Jul, 21:00","Predict")
+    m("arg","egy","Tue 7 Jul, 17:00","FT",[3,2],"arg",[{team:"egy",player:"Yasser Ibrahim",minute:"15"},{team:"egy",player:"Mostafa Zico",minute:"67"},{team:"arg",player:"Cristian Romero",minute:"79"},{team:"arg",player:"Lionel Messi",minute:"83"},{team:"arg",player:"Enzo Fernández",minute:"90+2",assist:"Lautaro Martínez"}],"Messi missed an earlier penalty; Argentina came back from 0-2", "r16d",0.96),
+    m("sui","col","Tue 7 Jul, 21:00","FT",["0 (4p)","0 (3p)"],"sui",[{team:"col",type:"shootout",player:"Davinson Sánchez",minute:"pens",detail:"hit crossbar"},{team:"col",type:"shootout",player:"Cucho Hernández",minute:"pens",detail:"saved by Gregor Kobel"},{team:"sui",type:"shootout",player:"Manuel Akanji",minute:"pens",detail:"missed"},{team:"sui",type:"shootout",player:"Ruben Vargas",minute:"pens",detail:"decisive penalty"}],"0-0 after extra time; Switzerland won 4-3 on penalties", "r16d",0.96)
   ]
 };
 let picks = load(), pos = [], focus = false;
