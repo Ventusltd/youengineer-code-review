@@ -10,7 +10,7 @@ const T = {
   arg:["Argentina","🇦🇷"], cpv:["Cape Verde","🇨🇻"], aus:["Australia","🇦🇺"], egy:["Egypt","🇪🇬"],
   sui:["Switzerland","🇨🇭"], dza:["Algeria","🇩🇿"], col:["Colombia","🇨🇴"], gha:["Ghana","🇬🇭"]
 };
-const sources = {r32:"SB Nation + Reuters / AP / Guardian bundle", r16a:"Reuters + Guardian", r16b:"Reuters + NY Post", r16c:"Reuters + AP + Guardian", r16d:"Reuters", committed:"Committed v5 snapshot"};
+const sources = {r32:"SB Nation + Reuters / AP / Guardian bundle", r16a:"Reuters + Guardian", r16b:"Reuters + NY Post", r16c:"Reuters + AP + Guardian", r16d:"Reuters", qf:"Reuters + Guardian + AP", committed:"Committed v5 snapshot"};
 const rounds = [
   {id:"round-32", title:"Round of 32", count:16, dates:null},
   {id:"round-16", title:"Round of 16", count:8, dates:["Sat 4 Jul, 18:00","Sat 4 Jul, 22:00","Mon 6 Jul, 20:00","Tue 7 Jul, 01:00","Sun 5 Jul, 21:00","Mon 6 Jul, 01:00","Tue 7 Jul, 17:00","Tue 7 Jul, 21:00"]},
@@ -48,6 +48,12 @@ const officialRounds = {
     m("mex","eng","Mon 6 Jul, 01:00","FT",[2,3],"eng",[{team:"eng",player:"Jude Bellingham",minute:"36"},{team:"eng",player:"Jude Bellingham",minute:"38"},{team:"mex",player:"Julián Quiñones",minute:"42"},{team:"eng",type:"penalty",player:"Harry Kane",minute:"60"},{team:"mex",type:"penalty",player:"Raúl Jiménez",minute:"69"}],null,"r16b",0.94),
     m("arg","egy","Tue 7 Jul, 17:00","FT",[3,2],"arg",[{team:"egy",player:"Yasser Ibrahim",minute:"15"},{team:"egy",player:"Mostafa Zico",minute:"67"},{team:"arg",player:"Cristian Romero",minute:"79"},{team:"arg",player:"Lionel Messi",minute:"83"},{team:"arg",player:"Enzo Fernández",minute:"90+2",assist:"Lautaro Martínez"}],"Messi missed an earlier penalty; Argentina came back from 0-2", "r16d",0.96),
     m("sui","col","Tue 7 Jul, 21:00","FT",["0 (4p)","0 (3p)"],"sui",[{team:"col",type:"shootout",player:"Davinson Sánchez",minute:"pens",detail:"hit crossbar"},{team:"col",type:"shootout",player:"Cucho Hernández",minute:"pens",detail:"saved by Gregor Kobel"},{team:"sui",type:"shootout",player:"Manuel Akanji",minute:"pens",detail:"missed"},{team:"sui",type:"shootout",player:"Ruben Vargas",minute:"pens",detail:"decisive penalty"}],"0-0 after extra time; Switzerland won 4-3 on penalties", "r16d",0.96)
+  ],
+  "quarter-finals": [
+    m("fra","mar","Thu 9 Jul, 21:00","FT",[2,0],"fra",[{team:"fra",player:"Kylian Mbappé",minute:"60"},{team:"fra",player:"Ousmane Dembélé",minute:"66"}],"Mbappé missed a first-half penalty", "qf",0.97),
+    m("esp","bel","Fri 10 Jul, 20:00","FT",[2,1],"esp",[{team:"esp",player:"Fabián Ruiz",minute:"30"},{team:"bel",player:"Charles De Ketelaere",minute:"41",assist:"Timothy Castagne"},{team:"esp",player:"Mikel Merino",minute:"88",detail:"rebound after Pau Cubarsí shot"}],null,"qf",0.98),
+    m("nor","eng","Sat 11 Jul, 22:00","Predict"),
+    m("arg","sui","Sun 12 Jul, 02:00","Predict")
   ]
 };
 let picks = load(), pos = [], focus = false;
